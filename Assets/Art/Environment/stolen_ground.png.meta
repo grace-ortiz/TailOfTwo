@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stolen_ground_0: -2930589310075780951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
