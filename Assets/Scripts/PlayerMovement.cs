@@ -26,12 +26,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetKey(KeyCode.RightArrow)) 
+         if (Input.GetKey(KeyCode.D)) 
         {
             MoveSideways(Vector2.right);
             PlayerSR.flipX = true;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A))
         {
             MoveSideways(Vector2.left);
             PlayerSR.flipX = false;
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             MoveSideways(Vector2.zero);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump) 
+        if (Input.GetKeyDown(KeyCode.W) && canJump) 
         {
             PlayerRB.linearVelocity = new Vector2(PlayerRB.linearVelocity.x, JumpStrength);
             canJump = false;
