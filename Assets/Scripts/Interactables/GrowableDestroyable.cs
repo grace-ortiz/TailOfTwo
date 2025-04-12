@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class GrowableDestroyable : Interactable
 {
-    public SpriteRenderer spriteRenderer;
-    public Sprite[] growthStages; // 0 = base, 1 = halfway (opt), 2 = fully-grown
+    public Sprite[] growthStages;
     public Sprite destroyedSprite;
 
     private int currentStage = 0;
@@ -15,6 +14,7 @@ public class GrowableDestroyable : Interactable
         }
         else if (currentStage < growthStages.Length) {
             spriteRenderer.sprite = growthStages[currentStage];
+            UpdateColliderShape();
             currentStage++;
         }
     }
@@ -22,13 +22,14 @@ public class GrowableDestroyable : Interactable
     public void Destroy() {
         if (spriteRenderer != null && destroyedSprite != null && !isDestroyed) {
             spriteRenderer.sprite = destroyedSprite;
-            currentStage = 0;
+            UpdateColliderShape();
             isDestroyed = true;
         }
     }
 
     public override void ResetInteraction() {
         spriteRenderer.sprite = baseSprite;
+        UpdateColliderShape();
         currentStage = 0;
         isDestroyed = false;
     }

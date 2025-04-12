@@ -27,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) { // recall
             if (currentInteractable != null)
+                print("current interactable: " + currentInteractable);
                 currentInteractable.CancelResetTimer();
                 currentInteractable.ResetInteraction();
                 

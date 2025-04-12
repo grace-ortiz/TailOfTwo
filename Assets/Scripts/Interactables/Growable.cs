@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 public class Growable : Interactable {
-    public SpriteRenderer spriteRenderer;
-    public Sprite[] growthStages; // 0 = base, 1 = half-grown (opt), 2 = fully-grown
-    protected int currentStage = 0;
+    public Sprite[] growthStages; // add as many growth stages as you want here, don't include the base sprite 
+    
+    protected int currentStage = 0; // stage 0 is the base sprite itself 
 
     public void Grow() {
         if (spriteRenderer == null || growthStages == null || growthStages.Length == 0)
@@ -10,6 +12,7 @@ public class Growable : Interactable {
 
         if (currentStage < growthStages.Length) {
             spriteRenderer.sprite = growthStages[currentStage];
+            UpdateColliderShape();
             currentStage++;
         }
     }
@@ -17,5 +20,7 @@ public class Growable : Interactable {
     public override void ResetInteraction() {
         currentStage = 0;
         spriteRenderer.sprite = baseSprite;
+        UpdateColliderShape();
     }
+    
 }
