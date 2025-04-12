@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour {
     private bool canJump;
 
     private Animator anim;
+    public float fallThreshold;
+    private bool isFalling = false;
+    private float maxHeightBeforeFall;
+    private bool canControl = true;
 
 
     // Start is called before the first frame update
@@ -25,6 +29,8 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (!canControl) return;
+
         if (Input.GetKey(KeyCode.D)) {
             MoveSideways(Vector2.right);
             PlayerSR.flipX = true;
@@ -45,6 +51,13 @@ public class PlayerMovement : MonoBehaviour {
             canJump = false;
             anim.SetBool("isJumping", true);
         } 
+
+        if (PlayerRB.linearVelocity.y < -0.1f) {
+            if (!isFalling) {
+                isFalling = true;
+                maxHeightBeforeFall = transform.position.y;
+            }
+        }
     }
 
     private void MoveSideways(Vector2 direction) {
@@ -58,5 +71,25 @@ public class PlayerMovement : MonoBehaviour {
             canJump = true;
             anim.SetBool("isJumping", false);
         }
+
+        if (isFalling) {
+            float fallDistance = maxHeightBeforeFall - transform.position.y;
+            if (fallDistance > fallThreshold) {
+                Debug.Log("Player fell! Fall distance: " + fallDistance);
+                anim.SetTrigger("hasFallen");
+                StartCoroutine(DisableControlForSeconds(0.8f));
+            }
+            else {
+                anim.SetTrigger("hasLanded");
+            }
+            isFalling = false;
+        }
+    }
+
+    private IEnumerator DisableControlForSeconds(float delay) {
+        canControl = false;
+        PlayerRB.linearVelocity = new Vector2(0, PlayerRB.linearVelocity.y);
+        yield return new WaitForSeconds(delay); 
+        canControl = true;
     }
 }
