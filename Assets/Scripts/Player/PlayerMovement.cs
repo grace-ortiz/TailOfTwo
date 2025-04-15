@@ -119,16 +119,30 @@ public class PlayerMovement : MonoBehaviour {
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
                 anim.SetTrigger("hasFallen");
-                StartCoroutine(DisableControlForSeconds(0.8f));
+                StartCoroutine(DisableControlForSeconds(0.8f, true, true));
+            }
+            else {
+                anim.SetTrigger("hasLanded");
+                if (PlayerRB.linearVelocity.x == 0) {
+                    StartCoroutine(DisableControlForSeconds(0.2f, false, false));
+                }
             }
             isFalling = false;
         }
     }
 
-    private IEnumerator DisableControlForSeconds(float delay) {
-        canControl = false;
-        PlayerRB.linearVelocity = new UnityEngine.Vector2(0, PlayerRB.linearVelocity.y);
+    private IEnumerator DisableControlForSeconds(float delay, bool control, bool stopVelocity) {
+        if (control) {
+            canControl = false;
+        }
+
+        if (stopVelocity) {
+            PlayerRB.linearVelocity = new UnityEngine.Vector2(0, PlayerRB.linearVelocity.y);
+        }
         yield return new WaitForSeconds(delay); 
-        canControl = true;
+
+        if (control) {
+            canControl = true;
+        }
     }
 }
