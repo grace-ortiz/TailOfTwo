@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using Unity.Cinemachine;
 using System.Numerics;
 using Mono.Cecil;
 using NUnit.Framework;
@@ -15,11 +15,13 @@ public class PlayerMovement : MonoBehaviour {
     public float JumpStrength;
 
     public GameObject RespawnPoint;
+    public CinemachinePositionComposer cameraPos;
 
 
 
     private Animator anim;
     public float fallThreshold;
+    private float lastFallDistance = 0f;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
     private bool canJump = true;
@@ -113,25 +115,61 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     //Processes the Players falling distance and Splat Animation
-    void OnCollisionEnter2D(Collision2D collision) {
+    private IEnumerator OnCollisionEnter2D(Collision2D collision) {
         GameObject collider = collision.collider.gameObject;
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if (isFalling) {
+
+        if (collider.CompareTag("danger"))
+        {
+            anim.ResetTrigger("hasLanded");
+            anim.ResetTrigger("hasFallen");
+            anim.SetTrigger("hasFallen");
+            StartCoroutine(DisableControlForSeconds(0.8f, true, true));
+            yield return new WaitForSeconds(0.2f);
+
+            cameraPos.CameraDistance += 15;
+            PlayerSR.enabled = false;
+            yield return new WaitForSeconds(0.2f);
+            transform.position = RespawnPoint.transform.position;
+            yield return new WaitForSeconds(0.2f);
+            PlayerSR.enabled = true;
+            cameraPos.CameraDistance -= 15;
+            yield break;
+        }
+
+        if (isFalling && IsGrounded()) {
             float fallDistance = maxHeightBeforeFall - transform.position.y;
+            lastFallDistance = fallDistance;
+
+            isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
+
+                anim.ResetTrigger("hasLanded");
+                anim.ResetTrigger("hasFallen");
                 anim.SetTrigger("hasFallen");
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
             else {
+                anim.ResetTrigger("hasFallen");
+                anim.ResetTrigger("hasLanded");
                 anim.SetTrigger("hasLanded");
-                print(PlayerRB.linearVelocity.x);
-                if (PlayerRB.linearVelocity.x < Mathf.Abs(0.01f)) {
-                    print("runnign coroutine");
+                print("hasLanded");
+            
+                if (Mathf.Abs(PlayerRB.linearVelocity.x) < 0.01) {
                     StartCoroutine(DisableControlForSeconds(0.4f, false, false));
                 }
             }
-            isFalling = false;
+            lastFallDistance = 0f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("respawnZone"))
+        {
+            RespawnPoint = collider.gameObject;
+
         }
     }
 
@@ -144,10 +182,8 @@ public class PlayerMovement : MonoBehaviour {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(0, PlayerRB.linearVelocity.y);
         }
         canJump = false;
-        print("can't jump");
         yield return new WaitForSeconds(delay); 
         canJump = true; 
-        print("can jump");
 
         if (control) {
             canControl = true;
