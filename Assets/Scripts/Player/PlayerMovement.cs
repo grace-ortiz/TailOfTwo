@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     public float fallThreshold;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
+    private bool canJump = true;
     private float maxHeightBeforeFall;
     private bool canControl = true;
 
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("isWalking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true) {
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
             anim.SetBool("IsGrounded", false);
 
@@ -79,15 +80,15 @@ public class PlayerMovement : MonoBehaviour {
         Debug.DrawRay(transform.position, UnityEngine.Vector2.down, Color.green);
         if(hitinfoL.collider != null)
         {
-            Debug.Log("Hit: " + hitinfoL.collider.name);
+            // Debug.Log("Hit: " + hitinfoL.collider.name);
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Left");
-            if (resetJumpNeeded == false)
+            if (resetJumpNeeded == false) 
             return true;
         }
         else if(hitinfoR.collider != null)
         {
-            Debug.Log("Hit: " + hitinfoR.collider.name);
+            // Debug.Log("Hit: " + hitinfoR.collider.name);
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Right");
             if (resetJumpNeeded == false)
@@ -99,10 +100,10 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     //Prevents Ray length from being abused by Double Jumps
-    IEnumerator ResetJump()
+    IEnumerator ResetJump(float delay)
     {
         resetJumpNeeded = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(delay);
         resetJumpNeeded = false; 
     }
 
@@ -114,6 +115,7 @@ public class PlayerMovement : MonoBehaviour {
     //Processes the Players falling distance and Splat Animation
     void OnCollisionEnter2D(Collision2D collision) {
         GameObject collider = collision.collider.gameObject;
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (isFalling) {
             float fallDistance = maxHeightBeforeFall - transform.position.y;
             if (fallDistance > fallThreshold) {
@@ -123,8 +125,10 @@ public class PlayerMovement : MonoBehaviour {
             }
             else {
                 anim.SetTrigger("hasLanded");
-                if (PlayerRB.linearVelocity.x == 0) {
-                    StartCoroutine(DisableControlForSeconds(0.2f, false, false));
+                print(PlayerRB.linearVelocity.x);
+                if (PlayerRB.linearVelocity.x < Mathf.Abs(0.01f)) {
+                    print("runnign coroutine");
+                    StartCoroutine(DisableControlForSeconds(0.4f, false, false));
                 }
             }
             isFalling = false;
@@ -139,7 +143,11 @@ public class PlayerMovement : MonoBehaviour {
         if (stopVelocity) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(0, PlayerRB.linearVelocity.y);
         }
+        canJump = false;
+        print("can't jump");
         yield return new WaitForSeconds(delay); 
+        canJump = true; 
+        print("can jump");
 
         if (control) {
             canControl = true;
