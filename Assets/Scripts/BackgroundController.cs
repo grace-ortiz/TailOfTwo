@@ -15,7 +15,7 @@ public class BackgroundController : MonoBehaviour
     }
 
     // tutorial said to use fixed update to stop jittering
-    void fixedUpdate()
+    void FixedUpdate()
     {
         float distance = camera.transform.position.x * parallaxRatio; // 0 = move w cam, 1 = won't move, 0.5 = half speed
 

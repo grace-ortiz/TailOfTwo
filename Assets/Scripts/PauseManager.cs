@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class PauseManager : MonoBehaviour
             isVisible = false;
             Time.timeScale = 1f;
         }
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene(0); // StartScene
     }
 
     // public void SetMusicVolume() { AudioManager.Instance.ChangeMusicVolume(SliderMusic.value); }
