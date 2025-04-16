@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - interactable
+  - danger
+  - respawnZone
   layers:
   - Default
   - TransparentFX
