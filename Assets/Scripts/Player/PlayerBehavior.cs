@@ -32,11 +32,17 @@ public class PlayerBehavior : MonoBehaviour {
                 currentInteractable.ResetInteraction();
                 
         }
+        else if (Input.GetKeyDown(KeyCode.E)) { // interact
+            if (currentInteractable is Plainable plainable) {
+                plainable.Interact();
+                plainable.StartResetTimer(1f);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
         print("entered collider");
-        if (!collider.CompareTag("interactable")) return;
+        if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
 
         Interactable interactable = collider.GetComponent<Interactable>();
         if (interactable != null) {
@@ -46,7 +52,7 @@ public class PlayerBehavior : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collider) {
         print("exited collider");
-        if (!collider.CompareTag("interactable")) return;
+        if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
 
         if (collider.GetComponent<Interactable>() == currentInteractable) {
             currentInteractable = null;

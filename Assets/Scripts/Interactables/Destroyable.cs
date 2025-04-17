@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Destroyable : Interactable {
     public Sprite destroyedSprite;
-    protected bool isDestroyed = false;
+    public bool isDestroyed = false;
 
 
     public void Destroy() {

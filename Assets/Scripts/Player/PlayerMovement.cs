@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour {
         GameObject collider = collision.collider.gameObject;
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (collider.CompareTag("danger"))
+        if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
             anim.ResetTrigger("hasLanded");
             anim.ResetTrigger("hasFallen");

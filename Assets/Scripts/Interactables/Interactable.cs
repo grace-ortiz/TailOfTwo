@@ -10,7 +10,8 @@ public abstract class Interactable : MonoBehaviour {
     private Coroutine resetCoroutine;
     public PolygonCollider2D polygonCollider;
     public BoxCollider2D boxCollider;
-    public float triggerBuffer = 1.0f;
+    public float triggerBufferX = 1.0f;
+    public float triggerBufferY = 1.0f;
     
 
     public abstract void ResetInteraction();
@@ -65,18 +66,18 @@ public abstract class Interactable : MonoBehaviour {
             polygonCollider.SetPath(i, path);
         }
 
-        UpdateBoxCollider(triggerBuffer);
+        UpdateBoxCollider(triggerBufferX, triggerBufferY);
     }
 
-    public void UpdateBoxCollider(float triggerBuffer)
+    public void UpdateBoxCollider(float triggerBufferX, float triggerBufferY)
     {
         if (boxCollider == null || spriteRenderer == null || spriteRenderer.sprite == null)
             return;
 
         Bounds bounds = spriteRenderer.sprite.bounds;
 
-        float colliderWidth = bounds.size.x + triggerBuffer;
-        float colliderHeight = bounds.size.y + triggerBuffer;
+        float colliderWidth = bounds.size.x + triggerBufferX;
+        float colliderHeight = bounds.size.y + triggerBufferY;
 
         boxCollider.size = new Vector2(colliderWidth, colliderHeight);
         boxCollider.offset = spriteRenderer.sprite.bounds.center;

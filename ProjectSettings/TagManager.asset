@@ -8,6 +8,7 @@ TagManager:
   - interactable
   - danger
   - respawnZone
+  - interactableDanger
   layers:
   - Default
   - TransparentFX
