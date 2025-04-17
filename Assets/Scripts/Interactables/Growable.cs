@@ -14,6 +14,7 @@ public class Growable : Interactable {
             spriteRenderer.sprite = growthStages[currentStage];
             UpdateColliderShape();
             currentStage++;
+            anim.SetInteger("currentStage", currentStage);
         }
     }
 
@@ -21,6 +22,7 @@ public class Growable : Interactable {
         currentStage = 0;
         spriteRenderer.sprite = baseSprite;
         UpdateColliderShape();
+        anim.SetInteger("currentStage", currentStage);
     }
     
 }
