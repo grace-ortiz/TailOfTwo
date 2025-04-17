@@ -12,6 +12,7 @@ public abstract class Interactable : MonoBehaviour {
     public BoxCollider2D boxCollider;
     public float triggerBufferX = 1.0f;
     public float triggerBufferY = 1.0f;
+    protected Animator anim;
     
 
     public abstract void ResetInteraction();
@@ -29,6 +30,7 @@ public abstract class Interactable : MonoBehaviour {
     {
         Debug.Log("Initial Position: " + transform.position);
         UpdateColliderShape();
+        anim = GetComponent<Animator>();
     }
 
     public void StartResetTimer(float delay)

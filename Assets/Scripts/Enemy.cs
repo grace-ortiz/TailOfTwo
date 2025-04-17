@@ -15,9 +15,12 @@ public class Enemy : MonoBehaviour {
     private float waitTimer = 0f;
     private bool isWaiting = false;
 
+    protected Animator anim;
+
     void Start()
     {
         startingPosition = transform.position;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,6 +35,8 @@ public class Enemy : MonoBehaviour {
                 transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
                 isWaiting = false;
+                anim.SetBool("isWaiting", false);
+                print("set is waiting to false");
                 waitTimer = 0f;
                 direction *= -1;
                 enemySR.flipX = !enemySR.flipX;
@@ -43,6 +48,9 @@ public class Enemy : MonoBehaviour {
 
         if (Mathf.Abs(transform.position.x - startingPosition.x) >= patrolDist) {
             isWaiting = true;
+            anim.SetBool("isWaiting", true);
+            print("set iswaiting to true");
+
         }
     }
 

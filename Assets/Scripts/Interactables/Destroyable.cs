@@ -10,6 +10,7 @@ public class Destroyable : Interactable {
             spriteRenderer.sprite = destroyedSprite;
             UpdateColliderShape();
             isDestroyed = true;
+            anim.SetBool("isDestroyed", true);
         }
     }
 
@@ -17,5 +18,6 @@ public class Destroyable : Interactable {
         spriteRenderer.sprite = baseSprite;
         UpdateColliderShape();
         isDestroyed = false;
+        anim.SetBool("isDestroyed", false);
     }
 }

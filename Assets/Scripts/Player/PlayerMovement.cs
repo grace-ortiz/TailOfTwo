@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("isWalking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true && canJump) {
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
             anim.SetBool("IsGrounded", false);
 
@@ -162,6 +162,11 @@ public class PlayerMovement : MonoBehaviour {
             }
             lastFallDistance = 0f;
         }
+
+        if (collider.CompareTag("interactable"))
+        {
+            canJump = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -169,7 +174,11 @@ public class PlayerMovement : MonoBehaviour {
         if (collider.CompareTag("respawnZone"))
         {
             RespawnPoint = collider.gameObject;
+        }
 
+        if (collider.CompareTag("interactable") && !IsGrounded())
+        {
+            canJump = false;
         }
     }
 

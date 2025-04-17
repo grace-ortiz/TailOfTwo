@@ -46,5 +46,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Parallax Background
+    uniqueID: 2410221869
+    locked: 0
+  - name: Environment
+    uniqueID: 2311548719
+    locked: 0
+  - name: UI
+    uniqueID: 1157719505
+    locked: 0
   m_RenderingLayers:
   - Default
