@@ -5,8 +5,8 @@ public class GrowableDestroyable : Interactable
     public Sprite[] growthStages;
     public Sprite destroyedSprite;
 
-    private int currentStage = 0;
-    private bool isDestroyed = false;
+    public int currentStage = 0;
+    public bool isDestroyed = false;
 
     public void Grow() {
         if (isDestroyed) {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Growable : Interactable {
     public Sprite[] growthStages; // add as many growth stages as you want here, don't include the base sprite 
     
-    protected int currentStage = 0; // stage 0 is the base sprite itself 
+    public int currentStage = 0; // stage 0 is the base sprite itself 
 
     public void Grow() {
         if (spriteRenderer == null || growthStages == null || growthStages.Length == 0)
@@ -14,6 +14,7 @@ public class Growable : Interactable {
             spriteRenderer.sprite = growthStages[currentStage];
             UpdateColliderShape();
             currentStage++;
+            anim.SetInteger("currentStage", currentStage);
         }
     }
 
@@ -21,6 +22,7 @@ public class Growable : Interactable {
         currentStage = 0;
         spriteRenderer.sprite = baseSprite;
         UpdateColliderShape();
+        anim.SetInteger("currentStage", currentStage);
     }
     
 }
