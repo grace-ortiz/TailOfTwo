@@ -48,14 +48,14 @@ public class GrowableDestroyable : Interactable
         spriteRenderer.sprite = growthStages[currentStage];
         UpdateColliderShape();
         currentStage++;
-        anim.SetInteger("currentStage", currentStage);
+        if (useAnimation) anim.SetInteger("currentStage", currentStage);
     }
 
     public void QuickDestroy() {
         spriteRenderer.sprite = destroyedSprite;
         UpdateColliderShape();
         isDestroyed = true;
-        anim.SetBool("isDestroyed", true);
+        if (useAnimation) anim.SetBool("isDestroyed", true);
     }
 
     public override void OnInteract() {

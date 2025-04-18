@@ -20,18 +20,18 @@ public class Destroyable : Interactable {
         spriteRenderer.sprite = destroyedSprite;
         UpdateColliderShape();
         isDestroyed = true;
-        anim.SetBool("isDestroyed", true);
+        if (useAnimation) anim.SetBool("isDestroyed", true);
     }
 
     public override void OnInteract() {
         isDestroyed = true;
-        anim.SetBool("isDestroyed", true);
+        if (useAnimation) anim.SetBool("isDestroyed", true);
     }
 
     public override void ResetInteraction() {
         spriteRenderer.sprite = baseSprite;
         UpdateColliderShape();
         isDestroyed = false;
-        anim.SetBool("isDestroyed", false);
+        if (useAnimation) anim.SetBool("isDestroyed", false);
     }
 }

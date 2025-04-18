@@ -12,6 +12,7 @@ public abstract class Interactable : MonoBehaviour {
     public BoxCollider2D boxCollider;
     public float triggerBufferX = 1.0f;
     public float triggerBufferY = 1.0f;
+    public bool useAnimation = true;
     protected Animator anim;
     public float morphDuration = 0.5f;
     
@@ -19,18 +20,8 @@ public abstract class Interactable : MonoBehaviour {
     public abstract void ResetInteraction();
     public abstract void OnInteract();
 
-    private void Awake() {
-        if (polygonCollider == null)
-            polygonCollider = GetComponent<PolygonCollider2D>();
-        if (spriteRenderer == null)
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        if (boxCollider == null)
-            boxCollider = GetComponent<BoxCollider2D>();
-    }
-
     void Start()
     {
-        Debug.Log("Initial Position: " + transform.position);
         UpdateColliderShape();
         anim = GetComponent<Animator>();
     }
@@ -85,8 +76,6 @@ public abstract class Interactable : MonoBehaviour {
 
         boxCollider.size = new Vector2(colliderWidth, colliderHeight);
         boxCollider.offset = spriteRenderer.sprite.bounds.center;
-
-        print(boxCollider.size);
     }
 
     public IEnumerator SmoothInteract(Sprite newSprite) {

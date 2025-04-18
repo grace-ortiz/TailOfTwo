@@ -23,21 +23,21 @@ public class Growable : Interactable {
 
     public override void OnInteract() {
         currentStage++;
-        anim.SetInteger("currentStage", currentStage);
+        if (useAnimation) anim.SetInteger("currentStage", currentStage);
     }
 
     private void QuickGrow() {
         spriteRenderer.sprite = growthStages[currentStage];
         UpdateColliderShape();
         currentStage++;
-        anim.SetInteger("currentStage", currentStage);
+        if (useAnimation) anim.SetInteger("currentStage", currentStage);
     }
 
     public override void ResetInteraction() {
         currentStage = 0;
         spriteRenderer.sprite = baseSprite;
         UpdateColliderShape();
-        anim.SetInteger("currentStage", currentStage);
+        if (useAnimation) anim.SetInteger("currentStage", currentStage);
     }
     
 }
