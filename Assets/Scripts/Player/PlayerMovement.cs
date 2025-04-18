@@ -75,10 +75,12 @@ public class PlayerMovement : MonoBehaviour {
     private bool IsGrounded()
     {
         UnityEngine.Vector3 offsetPositionLeft = transform.position + new UnityEngine.Vector3(-0.29f, 0f, 0f);
-        UnityEngine.Vector3 offsetPositionRight = transform.position + new UnityEngine.Vector3(0.29f, 0f, 0f);
+        UnityEngine.Vector3 offsetPositionRight = transform.position + new UnityEngine.Vector3(0.34f, 0f, 0f);
         RaycastHit2D hitinfoL = Physics2D.Raycast(offsetPositionLeft , UnityEngine.Vector2.down, 0.65f, 1 << 3);
         RaycastHit2D hitinfoR = Physics2D.Raycast(offsetPositionRight, UnityEngine.Vector2.down, 0.65f, 1 << 3);
         Debug.DrawRay(transform.position, UnityEngine.Vector2.down, Color.green);
+        Debug.DrawRay(offsetPositionLeft, UnityEngine.Vector2.down * 0.65f, Color.red);
+        Debug.DrawRay(offsetPositionRight, UnityEngine.Vector2.down * 0.65f, Color.blue);
         if(hitinfoL.collider != null)
         {
             // Debug.Log("Hit: " + hitinfoL.collider.name);
