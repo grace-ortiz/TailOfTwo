@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour {
     private Interactable currentInteractable;
     private float resetDuration = 5f;
+    private Color interactColor = new Color(1.15f, 1.15f, 1.15f);
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.O)) { // grow
@@ -47,6 +48,7 @@ public class PlayerBehavior : MonoBehaviour {
         Interactable interactable = collider.GetComponent<Interactable>();
         if (interactable != null) {
             currentInteractable = interactable;
+            currentInteractable.spriteRenderer.color = interactColor;
         }
     }
 
@@ -55,6 +57,7 @@ public class PlayerBehavior : MonoBehaviour {
         if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
 
         if (collider.GetComponent<Interactable>() == currentInteractable) {
+            currentInteractable.spriteRenderer.color = Color.white;
             currentInteractable = null;
         }
     }
