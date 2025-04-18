@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour {
 
                 isWaiting = false;
                 anim.SetBool("isWaiting", false);
-                print("set is waiting to false");
                 waitTimer = 0f;
                 direction *= -1;
                 enemySR.flipX = !enemySR.flipX;
@@ -49,8 +48,6 @@ public class Enemy : MonoBehaviour {
         if (Mathf.Abs(transform.position.x - startingPosition.x) >= patrolDist) {
             isWaiting = true;
             anim.SetBool("isWaiting", true);
-            print("set iswaiting to true");
-
         }
     }
 

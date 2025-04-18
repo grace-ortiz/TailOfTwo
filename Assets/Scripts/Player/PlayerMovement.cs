@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private Animator anim;
     public float fallThreshold;
-    private float lastFallDistance = 0f;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
     private bool canJump = true;
@@ -76,10 +75,12 @@ public class PlayerMovement : MonoBehaviour {
     private bool IsGrounded()
     {
         UnityEngine.Vector3 offsetPositionLeft = transform.position + new UnityEngine.Vector3(-0.29f, 0f, 0f);
-        UnityEngine.Vector3 offsetPositionRight = transform.position + new UnityEngine.Vector3(0.29f, 0f, 0f);
+        UnityEngine.Vector3 offsetPositionRight = transform.position + new UnityEngine.Vector3(0.34f, 0f, 0f);
         RaycastHit2D hitinfoL = Physics2D.Raycast(offsetPositionLeft , UnityEngine.Vector2.down, 0.65f, 1 << 3);
         RaycastHit2D hitinfoR = Physics2D.Raycast(offsetPositionRight, UnityEngine.Vector2.down, 0.65f, 1 << 3);
         Debug.DrawRay(transform.position, UnityEngine.Vector2.down, Color.green);
+        Debug.DrawRay(offsetPositionLeft, UnityEngine.Vector2.down * 0.65f, Color.red);
+        Debug.DrawRay(offsetPositionRight, UnityEngine.Vector2.down * 0.65f, Color.blue);
         if(hitinfoL.collider != null)
         {
             // Debug.Log("Hit: " + hitinfoL.collider.name);
@@ -121,8 +122,6 @@ public class PlayerMovement : MonoBehaviour {
 
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
-            anim.ResetTrigger("hasLanded");
-            anim.ResetTrigger("hasFallen");
             anim.SetTrigger("hasFallen");
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
@@ -139,28 +138,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isFalling && IsGrounded()) {
             float fallDistance = maxHeightBeforeFall - transform.position.y;
-            lastFallDistance = fallDistance;
 
             isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
-
-                anim.ResetTrigger("hasLanded");
-                anim.ResetTrigger("hasFallen");
+                
                 anim.SetTrigger("hasFallen");
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
-            else {
-                anim.ResetTrigger("hasFallen");
-                anim.ResetTrigger("hasLanded");
-                anim.SetTrigger("hasLanded");
-                print("hasLanded");
-            
-                if (Mathf.Abs(PlayerRB.linearVelocity.x) < 0.01) {
-                    StartCoroutine(DisableControlForSeconds(0.4f, false, false));
-                }
-            }
-            lastFallDistance = 0f;
         }
 
         if (collider.CompareTag("interactable"))

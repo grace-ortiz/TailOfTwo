@@ -9,6 +9,8 @@ TagManager:
   - danger
   - respawnZone
   - interactableDanger
+  - pool
+  - player
   layers:
   - Default
   - TransparentFX
