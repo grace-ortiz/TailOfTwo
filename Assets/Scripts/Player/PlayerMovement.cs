@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private Animator anim;
     public float fallThreshold;
-    private float lastFallDistance = 0f;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
     private bool canJump = true;
@@ -121,8 +120,6 @@ public class PlayerMovement : MonoBehaviour {
 
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
-            anim.ResetTrigger("hasLanded");
-            anim.ResetTrigger("hasFallen");
             anim.SetTrigger("hasFallen");
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
@@ -139,28 +136,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isFalling && IsGrounded()) {
             float fallDistance = maxHeightBeforeFall - transform.position.y;
-            lastFallDistance = fallDistance;
 
             isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
-
-                anim.ResetTrigger("hasLanded");
-                anim.ResetTrigger("hasFallen");
+                
                 anim.SetTrigger("hasFallen");
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
-            else {
-                anim.ResetTrigger("hasFallen");
-                anim.ResetTrigger("hasLanded");
-                anim.SetTrigger("hasLanded");
-                print("hasLanded");
-            
-                if (Mathf.Abs(PlayerRB.linearVelocity.x) < 0.01) {
-                    StartCoroutine(DisableControlForSeconds(0.4f, false, false));
-                }
-            }
-            lastFallDistance = 0f;
         }
 
         if (collider.CompareTag("interactable"))
