@@ -4,6 +4,8 @@ using System.Numerics;
 using Mono.Cecil;
 using NUnit.Framework;
 using UnityEngine;
+using FMOD.Studio;
+using UnityEditor.Callbacks;
 
 public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D PlayerRB;
@@ -25,11 +27,14 @@ public class PlayerMovement : MonoBehaviour {
     private bool canJump = true;
     private float maxHeightBeforeFall;
     private bool canControl = true;
-
+ 
+    //audio
+    private EventInstance walk;
 
     // Start is called before the first frame update
     void Start() {
        anim = GetComponent<Animator>();
+       walk = AudioManager.instance.CreateEventInstance(FMODEvents.instance.walk);
     }
 
     // Update is called once per frame
@@ -53,9 +58,12 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             anim.SetBool("IsGrounded", false);
-
+ 
         } 
+
+        UpdateSound();
 
         if (IsGrounded() == true)
         {
@@ -121,6 +129,7 @@ public class PlayerMovement : MonoBehaviour {
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
                 anim.SetTrigger("hasFallen");
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.splat, this.transform.position);
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
             else {
@@ -151,6 +160,26 @@ public class PlayerMovement : MonoBehaviour {
 
         if (control) {
             canControl = true;
+        }
+    }
+
+    private void UpdateSound()
+    {
+        // Start footsteps event if the player has an x velocity and is on the ground
+        if ((PlayerRB.linearVelocityX != 0) && IsGrounded())
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            walk.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                walk.start();
+            }
+
+        }
+        else
+        {
+            walk.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
 }

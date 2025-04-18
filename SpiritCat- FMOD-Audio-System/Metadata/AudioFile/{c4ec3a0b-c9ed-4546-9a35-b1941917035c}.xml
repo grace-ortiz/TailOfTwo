@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c4ec3a0b-c9ed-4546-9a35-b1941917035c}">
+		<property name="assetPath">
+			<value>Cat/Walking/Cat Walking 8.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31249433106575963</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e18fb565-aacf-4b8f-affe-3226e713e024}</destination>
+		</relationship>
+	</object>
+</objects>

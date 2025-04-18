@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{deb3d75e-6864-4d98-930f-0d690118386b}">
+		<property name="note" />
+		<property name="name">
+			<value>Ambience Intensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e3bc42cc-aadf-4fd0-b853-978f575ee2a7}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{707b5deb-09d8-4ddc-9141-d34f9f16ec54}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{707b5deb-09d8-4ddc-9141-d34f9f16ec54}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{041faba7-94a0-4be2-9551-be94ab867b05}</destination>
+		</relationship>
+	</object>
+	<object class="SeekModulator" id="{041faba7-94a0-4be2-9551-be94ab867b05}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="clockSource">
+			<value>1</value>
+		</property>
+		<property name="speedAscending">
+			<value>0.17000000178813934</value>
+		</property>
+		<property name="speedDescending">
+			<value>0.079999998211860657</value>
+		</property>
+		<property name="asymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
