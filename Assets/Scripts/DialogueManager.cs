@@ -27,8 +27,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        /* 
-         * For some reason this hides the dialogue box when it is included
         if (playerMovement != null)
         {
             playerMovement.enabled = false; //Stops input on dialogue
@@ -43,12 +41,12 @@ public class DialogueManager : MonoBehaviour
         {
             playerAnimator.SetBool("isWalking", false); // Stops walking animation
         }
-        */
+        
 
         this.textSpeed = dialogue.textSpeed;
         animator.SetBool("IsOpen", true);
 
-        //Debug.Log("Starting conversation with " + dialogue.name);
+        Debug.Log("Starting conversation with " + dialogue.name);
         dialogueBox.SetActive(true);
 
         nameText.text = dialogue.name;
@@ -87,13 +85,16 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+
+
+        animator.SetBool("IsOpen", false);
+        dialogueBox.SetActive(false);
+
         if (playerMovement != null)
         {
             playerMovement.enabled = true; //resumes movement
         }
 
-        animator.SetBool("IsOpen", false);
-        dialogueBox.SetActive(false);
     }
 
     void Update()
