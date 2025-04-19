@@ -10,7 +10,7 @@ public class AmbienceChangeTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag.Equals("Player"))
+        if (collider.tag.Equals("player"))
         {
             AudioManager.instance.SetAmbienceParameter(parameterName,parameterValue);
         }

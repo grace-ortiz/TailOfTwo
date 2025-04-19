@@ -60,6 +60,8 @@ public class PlayerMovement : MonoBehaviour {
 
         } 
 
+        UpdateSound();
+        
         if (IsGrounded() == true)
         {
             anim.SetBool("IsGrounded", true);

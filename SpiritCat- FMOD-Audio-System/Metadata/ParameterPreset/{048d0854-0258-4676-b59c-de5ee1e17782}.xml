@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{048d0854-0258-4676-b59c-de5ee1e17782}">
+		<property name="name">
+			<value>Cavern Intensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e3bc42cc-aadf-4fd0-b853-978f575ee2a7}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b0649d0e-369e-47ea-a551-e9cb980c17c2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b0649d0e-369e-47ea-a551-e9cb980c17c2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{6dcdaf4f-5521-4d03-9480-d6074455c291}</destination>
+		</relationship>
+	</object>
+	<object class="SeekModulator" id="{6dcdaf4f-5521-4d03-9480-d6074455c291}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="clockSource">
+			<value>1</value>
+		</property>
+		<property name="speedAscending">
+			<value>0.17000000178813934</value>
+		</property>
+		<property name="speedDescending">
+			<value>0.079999998211860657</value>
+		</property>
+		<property name="asymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

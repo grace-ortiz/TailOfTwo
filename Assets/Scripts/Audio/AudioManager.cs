@@ -28,9 +28,11 @@ public class AudioManager : MonoBehaviour
         InitializeAmbience(FMODEvents.instance.ambienceLevelOne);
         AudioManager.instance.SetAmbienceParameter("Ambience Intensity",0.2f);
         InitializeMusic(FMODEvents.instance.musicLevelOne);
+        InitializeAmbience(FMODEvents.instance.ambienceLevelTwo);
+        AudioManager.instance.SetAmbienceParameter("Cavern Intensity",0.0f);
     }
 
-    private void InitializeAmbience(EventReference ambienceEventReference)
+    public void InitializeAmbience(EventReference ambienceEventReference)
     {
         ambienceEventInstance = RuntimeManager.CreateInstance(ambienceEventReference);
         ambienceEventInstance.start();
