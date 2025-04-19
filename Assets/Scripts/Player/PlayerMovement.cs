@@ -1,11 +1,6 @@
 using System.Collections;
 using Unity.Cinemachine;
-using System.Numerics;
-using Mono.Cecil;
-using NUnit.Framework;
 using UnityEngine;
-using FMOD.Studio;
-using UnityEditor.Callbacks;
 
 public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D PlayerRB;
@@ -18,25 +13,22 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject RespawnPoint;
     public CinemachinePositionComposer cameraPos;
+    private Coroutine zoomCoroutine;
 
 
 
-    private Animator anim;
+    public Animator anim;
     public float fallThreshold;
-    private float lastFallDistance = 0f;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
     private bool canJump = true;
     private float maxHeightBeforeFall;
     private bool canControl = true;
- 
-    //audio
-    private EventInstance walk;
+
 
     // Start is called before the first frame update
     void Start() {
        anim = GetComponent<Animator>();
-       walk = AudioManager.instance.CreateEventInstance(FMODEvents.instance.walk);
     }
 
     // Update is called once per frame
@@ -60,16 +52,16 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             anim.SetBool("IsGrounded", false);
- 
-        } 
 
-        UpdateSound();
+        } 
 
         if (IsGrounded() == true)
         {
             anim.SetBool("IsGrounded", true);
+            if (!canJump) {
+                canJump = true;
+            }
         }
 
         if (PlayerRB.linearVelocity.y < -0.1f) {
@@ -84,16 +76,19 @@ public class PlayerMovement : MonoBehaviour {
     private bool IsGrounded()
     {
         UnityEngine.Vector3 offsetPositionLeft = transform.position + new UnityEngine.Vector3(-0.29f, 0f, 0f);
-        UnityEngine.Vector3 offsetPositionRight = transform.position + new UnityEngine.Vector3(0.29f, 0f, 0f);
+        UnityEngine.Vector3 offsetPositionRight = transform.position + new UnityEngine.Vector3(0.34f, 0f, 0f);
         RaycastHit2D hitinfoL = Physics2D.Raycast(offsetPositionLeft , UnityEngine.Vector2.down, 0.65f, 1 << 3);
         RaycastHit2D hitinfoR = Physics2D.Raycast(offsetPositionRight, UnityEngine.Vector2.down, 0.65f, 1 << 3);
         Debug.DrawRay(transform.position, UnityEngine.Vector2.down, Color.green);
+        Debug.DrawRay(offsetPositionLeft, UnityEngine.Vector2.down * 0.65f, Color.red);
+        Debug.DrawRay(offsetPositionRight, UnityEngine.Vector2.down * 0.65f, Color.blue);
         if(hitinfoL.collider != null)
         {
             // Debug.Log("Hit: " + hitinfoL.collider.name);
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Left");
             if (resetJumpNeeded == false) 
+            // print("grounded");
             return true;
         }
         else if(hitinfoR.collider != null)
@@ -102,10 +97,12 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Right");
             if (resetJumpNeeded == false)
+            // print("grounded");
             return true;
         }
         anim.SetBool("IsGrounded", false);
         // Debug.Log("In the Air");
+        // print("not groundead");
         return false;
     }
 
@@ -125,52 +122,33 @@ public class PlayerMovement : MonoBehaviour {
     //Processes the Players falling distance and Splat Animation
     private IEnumerator OnCollisionEnter2D(Collision2D collision) {
         GameObject collider = collision.collider.gameObject;
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
-            anim.ResetTrigger("hasLanded");
-            anim.ResetTrigger("hasFallen");
             anim.SetTrigger("hasFallen");
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
 
-            cameraPos.CameraDistance += 15;
+            CamZoom(40);
             PlayerSR.enabled = false;
             yield return new WaitForSeconds(0.2f);
             transform.position = RespawnPoint.transform.position;
             yield return new WaitForSeconds(0.2f);
             PlayerSR.enabled = true;
-            cameraPos.CameraDistance -= 15;
+            CamZoom(15);
             yield break;
         }
 
         if (isFalling && IsGrounded()) {
             float fallDistance = maxHeightBeforeFall - transform.position.y;
-            lastFallDistance = fallDistance;
 
             isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
-
-                anim.ResetTrigger("hasLanded");
-                anim.ResetTrigger("hasFallen");
+                
                 anim.SetTrigger("hasFallen");
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.splat, this.transform.position);
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
-            else {
-                anim.ResetTrigger("hasFallen");
-                anim.ResetTrigger("hasLanded");
-                anim.SetTrigger("hasLanded");
-                print("hasLanded");
-            
-                if (Mathf.Abs(PlayerRB.linearVelocity.x) < 0.01) {
-                    StartCoroutine(DisableControlForSeconds(0.4f, false, false));
-                }
-            }
-            lastFallDistance = 0f;
         }
 
         if (collider.CompareTag("interactable"))
@@ -185,10 +163,16 @@ public class PlayerMovement : MonoBehaviour {
         {
             RespawnPoint = collider.gameObject;
         }
-
-        if (collider.CompareTag("interactable") && !IsGrounded())
+        if ((collider.CompareTag("interactable") || collider.CompareTag("interactableDanger")) && IsGrounded() == false)
         {
             canJump = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("interactable") || collider.CompareTag("interactableDanger"))
+        {
+            canJump = true;
         }
     }
 
@@ -209,23 +193,23 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void UpdateSound()
-    {
-        // Start footsteps event if the player has an x velocity and is on the ground
-        if ((PlayerRB.linearVelocityX != 0) && IsGrounded())
-        {
-            // get the playback state
-            PLAYBACK_STATE playbackState;
-            walk.getPlaybackState(out playbackState);
-            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
-            {
-                walk.start();
-            }
+    private void CamZoom(float targetZoomLevel, float duration = 1.5f) {
+        if (zoomCoroutine != null) {
+            StopCoroutine(zoomCoroutine);
+        }
+        zoomCoroutine = StartCoroutine(ZoomToTarget(targetZoomLevel, duration));
+    }
 
+    private IEnumerator ZoomToTarget(float targetZoom, float duration) {
+        float startZoom = cameraPos.CameraDistance;
+        float elapsed = 0f;
+
+        while (elapsed < duration) {
+            elapsed += Time.deltaTime;
+            cameraPos.CameraDistance = Mathf.Lerp(startZoom, targetZoom, elapsed / duration);
+            yield return null;
         }
-        else
-        {
-            walk.stop(STOP_MODE.ALLOWFADEOUT);
-        }
+
+        cameraPos.CameraDistance = targetZoom;
     }
 }

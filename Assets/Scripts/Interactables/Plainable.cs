@@ -27,5 +27,9 @@ public class Plainable : Interactable {
         UpdateColliderShape();
         isInteracted = false;
     }
+
+    public override void OnInteract() {
+        
+    }
     
 }

@@ -9,8 +9,8 @@ TagManager:
   - danger
   - respawnZone
   - interactableDanger
-  - Mushroom
-  - Flower
+  - pool
+  - player
   layers:
   - Default
   - TransparentFX
