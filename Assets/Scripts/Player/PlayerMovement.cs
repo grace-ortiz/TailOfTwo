@@ -1,8 +1,5 @@
 using System.Collections;
 using Unity.Cinemachine;
-using System.Numerics;
-using Mono.Cecil;
-using NUnit.Framework;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
