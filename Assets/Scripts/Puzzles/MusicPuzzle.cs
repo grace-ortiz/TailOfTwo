@@ -19,7 +19,7 @@ public class MusicPuzzle : MonoBehaviour {
         barrier.SetActive(true);
         nextItemHit = 0;
 
-        correctOrder = new Plainable[] { crystal1, crystal2, crystal3, mushroom1, mushroom2, mushroom3 };
+        correctOrder = new Plainable[] { crystal3, mushroom1, crystal1, mushroom2, crystal2, mushroom3 };
 
         foreach (var item in correctOrder) {
             item.musicPuzzle = this;
