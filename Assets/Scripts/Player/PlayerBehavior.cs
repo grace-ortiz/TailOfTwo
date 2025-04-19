@@ -27,24 +27,24 @@ public class PlayerBehavior : MonoBehaviour {
             if (currentInteractable is Growable growable && activeCharges.Count < maxCharges) {
                 growable.Grow();
                 growable.StartResetTimer(resetDuration);
-                SpendCharge(growable);
+                if (growable.currentStage < growable.growthStages.Length) SpendCharge(growable);
             }
             else if (currentInteractable is GrowableDestroyable growableDestroyable  && activeCharges.Count < maxCharges) {
                 growableDestroyable.Grow();
                 growableDestroyable.StartResetTimer(resetDuration);
-                SpendCharge(growableDestroyable);
+                if (growableDestroyable.currentStage < growableDestroyable.growthStages.Length) SpendCharge(growableDestroyable);
             }
         }
         else if (Input.GetKeyDown(KeyCode.P)) { // destroy
             if (currentInteractable is Destroyable destroyable && activeCharges.Count < maxCharges) {
                 destroyable.Destroy();
                 destroyable.StartResetTimer(resetDuration);
-                SpendCharge(destroyable);
+                if (!destroyable.isDestroyed) SpendCharge(destroyable);
             }
             else if (currentInteractable is GrowableDestroyable growableDestroyable && activeCharges.Count < maxCharges) {
                 growableDestroyable.Destroy();
                 growableDestroyable.StartResetTimer(resetDuration);
-                SpendCharge(growableDestroyable);
+                if (!growableDestroyable.isDestroyed) SpendCharge(growableDestroyable);
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) { // recall
