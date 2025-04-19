@@ -17,7 +17,7 @@ public class PlayerBehavior : MonoBehaviour {
 
     void Start() {
         playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
-        // Debug.Log("currCharges = " + (maxCharges - activeCharges.Count));
+        Debug.Log("currCharges = " + (maxCharges - activeCharges.Count));
     }
 
 

@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("player"))
+        if (collision.CompareTag("Player"))
         {
             playerInside = true;
             SetChildrenActive(true);
@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("player"))
+        if (collision.CompareTag("Player"))
         {
             playerInside = false;
             SetChildrenActive(false);
