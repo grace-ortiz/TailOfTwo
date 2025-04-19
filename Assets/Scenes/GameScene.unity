@@ -38414,7 +38414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCharges: 1
-  playerMovement: {fileID: 670293034}
+  playerMovement: {fileID: 0}
 --- !u!95 &670293038
 Animator:
   serializedVersion: 7
@@ -81660,18 +81660,18 @@ MonoBehaviour:
     Path: 
   <hiss>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1801876489
+      Data2: 1074497603
+      Data3: 2000824474
+      Data4: -683818873
+    Path: event:/Cat/Hiss
   <growPlantSound>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1525308642
+      Data2: 1131666246
+      Data3: 720161681
+      Data4: -571220744
+    Path: event:/Abilities/GrowBluePlant
   <growMushroomSound>k__BackingField:
     Guid:
       Data1: 0
@@ -81681,33 +81681,68 @@ MonoBehaviour:
     Path: 
   <destroySound>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -188575191
+      Data2: 1252692956
+      Data3: -982680162
+      Data4: 696092370
+    Path: event:/Abilities/Destroy
   <ambienceLevelOne>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1499880700
+      Data2: 1091388683
+      Data3: -449223265
+      Data4: 1074827889
+    Path: event:/Ambience/Forest Ambience
   <musicLevelOne>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 643185427
+      Data2: 1164341751
+      Data3: -492932455
+      Data4: -1578312901
+    Path: event:/Music/Level 1 Music
+  <ambienceLevelTwo>k__BackingField:
+    Guid:
+      Data1: -775313065
+      Data2: 1130360626
+      Data3: -507321937
+      Data4: -584574796
+    Path: event:/Ambience/Cavern Ambience
+  <musicLevelTwo>k__BackingField:
+    Guid:
+      Data1: 457233044
+      Data2: 1211854368
+      Data3: -814782578
+      Data4: -2032847131
+    Path: event:/Music/Level 2 Music
   <openBarrier>k__BackingField:
+    Guid:
+      Data1: 1039880867
+      Data2: 1226513543
+      Data3: -283823723
+      Data4: 506478089
+    Path: event:/Puzzles/Level2/Open_Barrier
+  <pauseSound>k__BackingField:
+    Guid:
+      Data1: 8842761
+      Data2: 1145657733
+      Data3: 337780884
+      Data4: 1912234095
+    Path: event:/UI/Pause
+  <crystal_1>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
-  <pauseSound>k__BackingField:
+  <crystal_2>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <crystal_3>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0

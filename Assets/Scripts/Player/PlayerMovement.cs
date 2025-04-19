@@ -1,5 +1,7 @@
 using System.Collections;
 using Unity.Cinemachine;
+using FMODUnity;
+using FMOD.Studio;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -24,11 +26,13 @@ public class PlayerMovement : MonoBehaviour {
     private bool canJump = true;
     private float maxHeightBeforeFall;
     private bool canControl = true;
+    private EventInstance walk;
 
 
     // Start is called before the first frame update
     void Start() {
        anim = GetComponent<Animator>();
+       walk = AudioManager.instance.CreateEventInstance(FMODEvents.instance.walk);
     }
 
     // Update is called once per frame
@@ -52,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
-            AudioManager.instance.PlayOneShot()
+            AudioManager.instance.PlayOneShot(FMODEventsReference.sound )
             anim.SetBool("IsGrounded", false);
 
         } 
@@ -213,4 +217,25 @@ public class PlayerMovement : MonoBehaviour {
 
         cameraPos.CameraDistance = targetZoom;
     }
+
+    private void UpdateSound()
+    {
+        // Start footsteps event if the player has an x velocity and is on the ground
+        if ((PlayerRB.linearVelocityX != 0) && IsGrounded())
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            walk.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                walk.start();
+            }
+
+        }
+        else
+        {
+            walk.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
 }
