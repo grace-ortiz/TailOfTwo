@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: e3cc0971b448e6e4a828f9c4707dad95
+guid: f11e9fd6f73dbef44acc901944398121
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7511938611167672379
-    second: 5 tree bg_0
-  - first:
-      213: 4647976489745167911
-    second: 5 tree bg_1
-  - first:
-      213: -4422866406806046073
-    second: 5 tree bg_2
-  - first:
-      213: -5987006360720176908
-    second: 5 tree bg_3
-  - first:
-      213: -6743537488872467897
-    second: 5 tree bg_4
+      213: 5140331177233873736
+    second: growable 2 (small branch)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,23 +113,61 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 5 tree bg_0
+      name: growable 2 (small branch)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 243
-      alignment: 0
+        width: 160
+        height: 64
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 28, y: -15}
+        - {x: 33, y: -10}
+        - {x: 37, y: -10}
+        - {x: 34, y: -14}
+        - {x: 44, y: -14}
+        - {x: 51, y: -12}
+        - {x: 58, y: -9}
+        - {x: 49, y: -10}
+        - {x: 44, y: -11}
+        - {x: 41, y: -11}
+        - {x: 43, y: -5}
+        - {x: 47, y: 1}
+        - {x: 39, y: -4}
+        - {x: 32, y: -7}
+        - {x: 13, y: -11}
+        - {x: 5, y: -11}
+        - {x: 18, y: 1}
+        - {x: 8, y: 1}
+        - {x: 1, y: -5}
+        - {x: -8, y: -10}
+        - {x: -16, y: -4}
+        - {x: -22, y: 0}
+        - {x: -29, y: 3}
+        - {x: -41, y: -3}
+        - {x: -51, y: -8}
+        - {x: -55, y: -13}
+        - {x: -59, y: -14}
+        - {x: -61, y: -17}
+        - {x: -62, y: -20}
+        - {x: -74, y: -32}
+        - {x: -38, y: -32}
+        - {x: -38, y: -23}
+        - {x: -34, y: -17}
+        - {x: -28, y: -14}
+        - {x: -21, y: -21}
+        - {x: -8, y: -25}
+        - {x: 1, y: -20}
+        - {x: 10, y: -17}
+      tessellationDetail: 0
       bones: []
-      spriteID: b38b03ded54cf3860800000000000000
-      internalID: 7511938611167672379
+      spriteID: 84bf3e698ff165740800000000000000
+      internalID: 5140331177233873736
       vertices: []
       indices: 
       edges: []
@@ -150,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5028e0f7ba8a5c149bace251af4503ed
+    spriteID: 182b068a5fd0f804483deb3e06fda620
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +186,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      5 tree bg_0: 7511938611167672379
+      growable 2 (small branch)_0: 5140331177233873736
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

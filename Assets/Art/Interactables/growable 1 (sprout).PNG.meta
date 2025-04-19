@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 1dd865d8c325c76459ccb32dbf38cd7f
+guid: 438138853c4e1834fbe7fcddcdd60ac9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 863198727712768102
-    second: 7 big trees_0
+      213: 4231474758069325114
+    second: growable 1 (sprout)_0
+  - first:
+      213: 2995664877942097225
+    second: growable 1 (sprout)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,14 +116,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 7 big trees_0
+      name: growable 1 (sprout)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 800
-        height: 243
-      alignment: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66083ef5ba2bafb00800000000000000
-      internalID: 863198727712768102
+      spriteID: a3d01c68fd739ba30800000000000000
+      internalID: 4231474758069325114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: growable 1 (sprout)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9454ad3b55db29920800000000000000
+      internalID: 2995664877942097225
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 82c30057d6d654541a92865f2150dc19
+    spriteID: c100fc88f80e9674abec7ece053c114f
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      7 big trees_0: 863198727712768102
+      growable 1 (sprout)_0: 4231474758069325114
+      growable 1 (sprout)_1: 2995664877942097225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
