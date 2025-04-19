@@ -21,7 +21,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Death SFX")]
     [field: SerializeField] public FMODUnity.EventReference death { get; private set;}
     
-    
+    [field: Header("Hiss SFX")]
+    [field: SerializeField] public FMODUnity.EventReference hiss { get; private set;}
+
     //Abilities 
     [field: Header("Grow SFX")]
     [field: SerializeField] public FMODUnity.EventReference growPlantSound { get; private set;}
@@ -41,12 +43,28 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public FMODUnity.EventReference musicLevelOne { get; private set;}
     
     
+    //level 2 sfx
+
+    [field: Header("Ambience Level 2")]
+    [field: SerializeField] public FMODUnity.EventReference ambienceLevelTwo { get; private set;}
+    
+    [field: Header("Music Level 2")]
+    [field: SerializeField] public FMODUnity.EventReference musicLevelTwo { get; private set;}
+
+    [field: Header("Open Barrier SFX")]
+    [field: SerializeField] public FMODUnity.EventReference openBarrier { get; private set;}
     // UI SFX
     [field: Header("Pause SFX")]
     [field: SerializeField] public FMODUnity.EventReference pauseSound {get; private set;}
 
+    [field: Header("Crystal 1 SFX")]
+    [field: SerializeField] public FMODUnity.EventReference crystal_1 {get; private set;}
 
+    [field: Header("Crystal 2 SFX")]
+    [field: SerializeField] public FMODUnity.EventReference crystal_2 {get; private set;}
 
+    [field: Header("Crystal 3 SFX")]
+    [field: SerializeField] public FMODUnity.EventReference crystal_3 {get; private set;}
     
     public static FMODEvents instance { get; private set; }
 

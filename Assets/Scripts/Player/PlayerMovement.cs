@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
+            AudioManager.instance.PlayOneShot()
             anim.SetBool("IsGrounded", false);
 
         } 
