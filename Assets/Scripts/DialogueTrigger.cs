@@ -5,13 +5,20 @@ using System.Collections.Generic;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public bool playOnce = false; // 💡 new toggle in Inspector
+    private bool hasPlayed = false;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
-            Debug.Log("Trigger entered by: " + other.name);
+            //Debug.Log("Trigger entered by: " + other.name);
+            if (playOnce && hasPlayed)
+                return;
 
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+            if (playOnce)
+                hasPlayed = true;
         }
     }
     void OnDrawGizmos()

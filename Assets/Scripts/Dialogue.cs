@@ -5,11 +5,16 @@ using System.Collections.Generic;
 
 
 [System.Serializable]
+public class DialogueLine
+{
+    public string speakerName;
+    [TextArea(2, 5)]
+    public string sentence;
+}
+
+[System.Serializable]
 public class Dialogue
 {
-    public string name;
-    [TextArea(3,10)]
-    public string[] sentences;
+    public DialogueLine[] lines;
     public float textSpeed = 0.02f;
-
 }
