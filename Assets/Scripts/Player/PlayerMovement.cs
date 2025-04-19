@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour {
             isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
-                
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.splat, this.transform.position);
                 anim.SetTrigger("hasFallen");
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
