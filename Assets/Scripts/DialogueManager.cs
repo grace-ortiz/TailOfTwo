@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     private Dictionary<string, Sprite> speakerPortraitMap;
 
+    public System.Action onDialogueComplete;
+
 
 
     void Start()
@@ -129,6 +131,10 @@ public class DialogueManager : MonoBehaviour
         if (playerMovement != null)
         {
             playerMovement.enabled = true; //resumes movement
+        }
+
+        if (onDialogueComplete != null){
+            onDialogueComplete.Invoke();
         }
 
     }
