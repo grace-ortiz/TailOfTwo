@@ -64,7 +64,6 @@ public class PlayerBehavior : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider) {
         
         if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
-        print("entered collider");
         Interactable interactable = collider.GetComponentInParent<Interactable>();
         if (interactable != null) {
             currentInteractable = interactable;
@@ -73,7 +72,6 @@ public class PlayerBehavior : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
-        print("exited collider");
         if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
 
         if (collider.GetComponentInParent<Interactable>() == currentInteractable) {
@@ -121,7 +119,7 @@ public class PlayerBehavior : MonoBehaviour {
         // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
 
-    void RecallAllCharges() {
+    public void RecallAllCharges() {
 
         if (activeCharges.Count != 0) {
             foreach (var charge in activeCharges) {
