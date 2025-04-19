@@ -1,6 +1,5 @@
 using System.Collections;
 using Unity.Cinemachine;
-using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
 
@@ -56,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
-            AudioManager.instance.PlayOneShot(FMODEventsReference.sound )
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             anim.SetBool("IsGrounded", false);
 
         } 
