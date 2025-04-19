@@ -91,7 +91,6 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Left");
             if (resetJumpNeeded == false) 
-            // print("grounded");
             return true;
         }
         else if(hitinfoR.collider != null)
@@ -100,12 +99,10 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Right");
             if (resetJumpNeeded == false)
-            // print("grounded");
             return true;
         }
         anim.SetBool("IsGrounded", false);
         // Debug.Log("In the Air");
-        // print("not groundead");
         return false;
     }
 

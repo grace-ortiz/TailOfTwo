@@ -23,32 +23,31 @@ public class Enemy : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    void Update()
-    {
 
-        if (isWaiting)
+        void FixedUpdate()
         {
-            waitTimer += Time.deltaTime;
-            if (waitTimer >= idleTime)
+            if (isWaiting)
             {
-                float clampedX = startingPosition.x + direction * patrolDist;
-                transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
-
-                isWaiting = false;
-                anim.SetBool("isWaiting", false);
-                waitTimer = 0f;
-                direction *= -1;
-                enemySR.flipX = !enemySR.flipX;
+                waitTimer += Time.fixedDeltaTime;
+                if (waitTimer >= idleTime)
+                {
+                    isWaiting = false;
+                    waitTimer = 0f;
+                    direction *= -1;
+                    enemySR.flipX = direction < 0;
+                    anim.SetBool("isWaiting", false);
+                }
+                return;
             }
-            return;
-        }
 
-        transform.Translate(Vector3.right * direction * moveSpeed * Time.deltaTime);
+            Vector2 newPos = enemyRB.position + Vector2.right * direction * moveSpeed * Time.fixedDeltaTime;
+            enemyRB.MovePosition(newPos);
 
-        if (Mathf.Abs(transform.position.x - startingPosition.x) >= patrolDist) {
-            isWaiting = true;
-            anim.SetBool("isWaiting", true);
+            if (Mathf.Abs(newPos.x - startingPosition.x) >= patrolDist)
+            {
+                isWaiting = true;
+                anim.SetBool("isWaiting", true);
+            }
         }
-    }
 
 }
