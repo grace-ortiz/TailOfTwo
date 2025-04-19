@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fishEmoji_0: 6997422551960333338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

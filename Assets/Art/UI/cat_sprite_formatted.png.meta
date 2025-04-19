@@ -734,7 +734,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cat_sprite_formatted_0: 2631875461522382116
+      cat_sprite_formatted_1: 2744862844737606882
+      cat_sprite_formatted_10: 7146852574227078202
+      cat_sprite_formatted_11: -7625662761787932396
+      cat_sprite_formatted_12: 7693783969848295721
+      cat_sprite_formatted_13: 2285140769711388253
+      cat_sprite_formatted_14: 5575150350013201037
+      cat_sprite_formatted_15: -2317490366878692455
+      cat_sprite_formatted_16: -4410671845031128612
+      cat_sprite_formatted_17: -6947817521664502862
+      cat_sprite_formatted_18: -7465946139776525135
+      cat_sprite_formatted_19: 2549044734358703426
+      cat_sprite_formatted_2: 2226167115300281220
+      cat_sprite_formatted_20: 4284700033621128748
+      cat_sprite_formatted_21: 3175293827580846324
+      cat_sprite_formatted_22: 8284119930962953631
+      cat_sprite_formatted_23: 3493022079746067544
+      cat_sprite_formatted_24: 328599211980316798
+      cat_sprite_formatted_3: -99639092525439189
+      cat_sprite_formatted_4: -1506455634791923870
+      cat_sprite_formatted_5: -5566348634048014094
+      cat_sprite_formatted_6: 9092572990547602316
+      cat_sprite_formatted_7: -5002598304177479948
+      cat_sprite_formatted_8: 1014685232819911273
+      cat_sprite_formatted_9: 3103011116989104477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
