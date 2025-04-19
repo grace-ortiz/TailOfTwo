@@ -36,12 +36,14 @@ public class PauseManager : MonoBehaviour
             PauseMenuUI.SetActive(true);
             isVisible = true;
             Time.timeScale = 0f;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.pauseSound, this.transform.position);
         }
         else // if visible, resume game
         {
             PauseMenuUI.SetActive(false);
             isVisible = false;
             Time.timeScale = 1f;
+            
         }
     }
 

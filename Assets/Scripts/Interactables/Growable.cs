@@ -15,6 +15,8 @@ public class Growable : Interactable {
             UpdateColliderShape();
             currentStage++;
             anim.SetInteger("currentStage", currentStage);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
+            
         }
     }
 

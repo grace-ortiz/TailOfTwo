@@ -5,6 +5,7 @@ using FMODUnity;
 
 public class FMODEvents : MonoBehaviour
 {
+    // Cat SFX
     [field: Header("Jump SFX")]
     [field: SerializeField] public FMODUnity.EventReference jump { get; private set; }
     
@@ -16,7 +17,23 @@ public class FMODEvents : MonoBehaviour
     
     [field: Header("Splat SFX")]
     [field: SerializeField] public FMODUnity.EventReference splat { get; private set;}
+
+    [field: Header("Death SFX")]
+    [field: SerializeField] public FMODUnity.EventReference death { get; private set;}
     
+    
+    //Abilities 
+    [field: Header("Grow SFX")]
+    [field: SerializeField] public FMODUnity.EventReference growPlantSound { get; private set;}
+
+    [field: Header("Grow SFX")]
+    [field: SerializeField] public FMODUnity.EventReference growMushroomSound { get; private set;}
+
+    [field: Header("Destroy SFX")]
+    [field: SerializeField] public FMODUnity.EventReference destroySound { get; private set;}
+
+
+    // level 1 SFX
     [field: Header("Ambience Level 1")]
     [field: SerializeField] public FMODUnity.EventReference ambienceLevelOne { get; private set;}
     
@@ -24,6 +41,12 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public FMODUnity.EventReference musicLevelOne { get; private set;}
     
     
+    // UI SFX
+    [field: Header("Pause SFX")]
+    [field: SerializeField] public FMODUnity.EventReference pauseSound {get; private set;}
+
+
+
     
     public static FMODEvents instance { get; private set; }
 

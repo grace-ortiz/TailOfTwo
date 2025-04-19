@@ -6,11 +6,13 @@ public class Destroyable : Interactable {
 
 
     public void Destroy() {
-        if (!isDestroyed && spriteRenderer != null && destroyedSprite != null) {
+        if (!isDestroyed && spriteRenderer != null && destroyedSprite != null) 
+        {
             spriteRenderer.sprite = destroyedSprite;
             UpdateColliderShape();
             isDestroyed = true;
             anim.SetBool("isDestroyed", true);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.destroySound, this.transform.position);
         }
     }
 
