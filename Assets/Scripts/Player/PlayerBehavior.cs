@@ -13,6 +13,13 @@ public class PlayerBehavior : MonoBehaviour {
     private float resetDuration = 5f;
     public int maxCharges = 1;
     private Color interactColor = new Color(1.15f, 1.15f, 1.15f);
+    public PlayerMovement playerMovement;
+
+    void Start() {
+        playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
+        // Debug.Log("currCharges = " + (maxCharges - activeCharges.Count));
+    }
+
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.O)) { // grow
@@ -87,6 +94,8 @@ public class PlayerBehavior : MonoBehaviour {
 
         Coroutine recallCoroutine = StartCoroutine(AutoRecall(target));
         activeCharges.Add(new ActiveCharge { interactable = target, recallCoroutine = recallCoroutine });
+        playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
+        // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
     IEnumerator AutoRecall(Interactable target) {
         yield return new WaitForSeconds(resetDuration);
@@ -108,19 +117,25 @@ public class PlayerBehavior : MonoBehaviour {
 
         target.CancelResetTimer();
         target.ResetInteraction();
+        playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
+        // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
 
     void RecallAllCharges() {
 
-        foreach (var charge in activeCharges) {
-            if (charge.interactable != null) {
-                charge.interactable.CancelResetTimer();
-                charge.interactable.ResetInteraction();
-                StopCoroutine(charge.recallCoroutine);
+        if (activeCharges.Count != 0) {
+            foreach (var charge in activeCharges) {
+                if (charge.interactable != null) {
+                    charge.interactable.CancelResetTimer();
+                    charge.interactable.ResetInteraction();
+                    StopCoroutine(charge.recallCoroutine);
+                }
             }
         }
 
         activeCharges.Clear();
+        playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
+        // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
 
     public void SetMaxCharges(int newMax) {

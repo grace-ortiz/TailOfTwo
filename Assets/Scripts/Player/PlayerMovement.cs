@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-    private Animator anim;
+    public Animator anim;
     public float fallThreshold;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
