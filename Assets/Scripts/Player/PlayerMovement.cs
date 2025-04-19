@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject RespawnPoint;
     public CinemachinePositionComposer cameraPos;
+    private Coroutine zoomCoroutine;
 
 
 
@@ -124,7 +125,6 @@ public class PlayerMovement : MonoBehaviour {
     //Processes the Players falling distance and Splat Animation
     private IEnumerator OnCollisionEnter2D(Collision2D collision) {
         GameObject collider = collision.collider.gameObject;
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
@@ -132,13 +132,13 @@ public class PlayerMovement : MonoBehaviour {
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
 
-            cameraPos.CameraDistance += 15;
+            CamZoom(40);
             PlayerSR.enabled = false;
             yield return new WaitForSeconds(0.2f);
             transform.position = RespawnPoint.transform.position;
             yield return new WaitForSeconds(0.2f);
             PlayerSR.enabled = true;
-            cameraPos.CameraDistance -= 15;
+            CamZoom(15);
             yield break;
         }
 
@@ -194,5 +194,25 @@ public class PlayerMovement : MonoBehaviour {
         if (control) {
             canControl = true;
         }
+    }
+
+    private void CamZoom(float targetZoomLevel, float duration = 1.5f) {
+        if (zoomCoroutine != null) {
+            StopCoroutine(zoomCoroutine);
+        }
+        zoomCoroutine = StartCoroutine(ZoomToTarget(targetZoomLevel, duration));
+    }
+
+    private IEnumerator ZoomToTarget(float targetZoom, float duration) {
+        float startZoom = cameraPos.CameraDistance;
+        float elapsed = 0f;
+
+        while (elapsed < duration) {
+            elapsed += Time.deltaTime;
+            cameraPos.CameraDistance = Mathf.Lerp(startZoom, targetZoom, elapsed / duration);
+            yield return null;
+        }
+
+        cameraPos.CameraDistance = targetZoom;
     }
 }
