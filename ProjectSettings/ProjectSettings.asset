@@ -688,11 +688,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: e42a5124-0977-4cca-82d4-73863b7123fa
+  cloudProjectId: 39325e6a-aec5-4001-9bb7-cf2417c74914
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: SpiritCat
-  organizationId: pixillite
+  organizationId: rivdog66
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

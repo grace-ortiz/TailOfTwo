@@ -7,6 +7,7 @@ public class Destroyable : Interactable {
 
     public void Destroy() {
         if (!isDestroyed && spriteRenderer != null && destroyedSprite != null) {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             if (morphDuration == 0) {
                 QuickDestroy();
             }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{da813644-1242-4935-87da-4e114c44a800}">
+		<property name="name">
+			<value>AmbienceCaveIntensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e3bc42cc-aadf-4fd0-b853-978f575ee2a7}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1da092e8-f2c1-4097-b75b-62c75f99658d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1da092e8-f2c1-4097-b75b-62c75f99658d}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

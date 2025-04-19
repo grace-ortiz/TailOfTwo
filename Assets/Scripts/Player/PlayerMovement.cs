@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Cinemachine;
+using FMOD.Studio;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -24,11 +25,13 @@ public class PlayerMovement : MonoBehaviour {
     private bool canJump = true;
     private float maxHeightBeforeFall;
     private bool canControl = true;
+    private EventInstance walk;
 
 
     // Start is called before the first frame update
     void Start() {
        anim = GetComponent<Animator>();
+       walk = AudioManager.instance.CreateEventInstance(FMODEvents.instance.walk);
     }
 
     // Update is called once per frame
@@ -52,10 +55,13 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             anim.SetBool("IsGrounded", false);
 
         } 
 
+        UpdateSound();
+        
         if (IsGrounded() == true)
         {
             anim.SetBool("IsGrounded", true);
@@ -126,6 +132,7 @@ public class PlayerMovement : MonoBehaviour {
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
             anim.SetTrigger("hasFallen");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
 
@@ -145,7 +152,7 @@ public class PlayerMovement : MonoBehaviour {
             isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
-                
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.splat, this.transform.position);
                 anim.SetTrigger("hasFallen");
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }
@@ -212,4 +219,25 @@ public class PlayerMovement : MonoBehaviour {
 
         cameraPos.CameraDistance = targetZoom;
     }
+
+    private void UpdateSound()
+    {
+        // Start footsteps event if the player has an x velocity and is on the ground
+        if ((PlayerRB.linearVelocityX != 0) && IsGrounded())
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            walk.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                walk.start();
+            }
+
+        }
+        else
+        {
+            walk.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
 }
