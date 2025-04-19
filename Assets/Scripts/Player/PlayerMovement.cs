@@ -61,6 +61,9 @@ public class PlayerMovement : MonoBehaviour {
         if (IsGrounded() == true)
         {
             anim.SetBool("IsGrounded", true);
+            if (!canJump) {
+                canJump = true;
+            }
         }
 
         if (PlayerRB.linearVelocity.y < -0.1f) {
@@ -87,6 +90,7 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Left");
             if (resetJumpNeeded == false) 
+            // print("grounded");
             return true;
         }
         else if(hitinfoR.collider != null)
@@ -95,10 +99,12 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("IsGrounded", true);
             // Debug.Log("Grounded Right");
             if (resetJumpNeeded == false)
+            // print("grounded");
             return true;
         }
         anim.SetBool("IsGrounded", false);
         // Debug.Log("In the Air");
+        // print("not groundead");
         return false;
     }
 
@@ -161,8 +167,8 @@ public class PlayerMovement : MonoBehaviour {
         {
             RespawnPoint = collider.gameObject;
         }
-
-        if ((collider.CompareTag("interactable") || collider.CompareTag("interactableDanger")) && !IsGrounded())
+        print("isgrounded: " + IsGrounded());
+        if ((collider.CompareTag("interactable") || collider.CompareTag("interactableDanger")) && IsGrounded() == false)
         {
             print("can jump: false!");
             canJump = false;
