@@ -5280,7 +5280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360862532410516873, guid: c2ba02aaa1b914512992b7ca6456c86a, type: 3}
       propertyPath: patrolDist
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8138894915310578151, guid: c2ba02aaa1b914512992b7ca6456c86a, type: 3}
       propertyPath: m_Size.x
@@ -5308,7 +5308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8257874600282587107, guid: c2ba02aaa1b914512992b7ca6456c86a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 127
+      value: 126.5
       objectReference: {fileID: 0}
     - target: {fileID: 8257874600282587107, guid: c2ba02aaa1b914512992b7ca6456c86a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38249,6 +38249,7 @@ MonoBehaviour:
   JumpStrength: 8.5
   RespawnPoint: {fileID: 622384358}
   cameraPos: {fileID: 1540135524}
+  anim: {fileID: 0}
   fallThreshold: 5
 --- !u!50 &670293035
 Rigidbody2D:
@@ -38336,6 +38337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCharges: 1
+  playerMovement: {fileID: 670293034}
 --- !u!95 &670293038
 Animator:
   serializedVersion: 7

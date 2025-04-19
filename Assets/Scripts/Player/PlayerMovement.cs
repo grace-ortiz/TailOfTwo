@@ -1,8 +1,5 @@
 using System.Collections;
 using Unity.Cinemachine;
-// using System.Numerics;
-// using Mono.Cecil;
-// using NUnit.Framework;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -20,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-    private Animator anim;
+    public Animator anim;
     public float fallThreshold;
     private bool isFalling = false;
     private bool resetJumpNeeded = false;
