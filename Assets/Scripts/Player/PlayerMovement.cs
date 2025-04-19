@@ -156,7 +156,6 @@ public class PlayerMovement : MonoBehaviour {
 
         if (collider.CompareTag("interactable"))
         {
-            print("can jump: true!");
             canJump = true;
         }
     }
@@ -167,19 +166,15 @@ public class PlayerMovement : MonoBehaviour {
         {
             RespawnPoint = collider.gameObject;
         }
-        print("isgrounded: " + IsGrounded());
         if ((collider.CompareTag("interactable") || collider.CompareTag("interactableDanger")) && IsGrounded() == false)
         {
-            print("can jump: false!");
             canJump = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
-        print("isgrounded: " + IsGrounded());
         if (collider.CompareTag("interactable") || collider.CompareTag("interactableDanger"))
         {
-            print("can jump: true!");
             canJump = true;
         }
     }
