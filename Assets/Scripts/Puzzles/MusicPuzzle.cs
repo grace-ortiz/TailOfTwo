@@ -48,6 +48,7 @@ public class MusicPuzzle : MonoBehaviour {
     private void CompletePuzzle() {
         musicComplete = true;
         barrier.SetActive(false);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.openBarrier, this.transform.position);
     }
 
     private void ResetPuzzle()

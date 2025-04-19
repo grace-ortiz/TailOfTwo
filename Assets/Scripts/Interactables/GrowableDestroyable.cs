@@ -19,9 +19,11 @@ public class GrowableDestroyable : Interactable
         interactionType = GDInteractType.Grow;
 
         if (isDestroyed) {
+            //put reverse grow here later if i have time (River)
             ResetInteraction();
         }
         else if (currentStage < growthStages.Length) {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             if (morphDuration == 0) {
                 QuickGrow();
             }

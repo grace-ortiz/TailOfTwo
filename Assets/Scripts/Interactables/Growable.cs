@@ -11,7 +11,9 @@ public class Growable : Interactable {
         if (spriteRenderer == null || growthStages == null || growthStages.Length == 0)
             return;
 
+
         if (currentStage < growthStages.Length) {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
             if (morphDuration == 0) {
                 QuickGrow();
             }
@@ -29,6 +31,7 @@ public class Growable : Interactable {
     private void QuickGrow() {
         spriteRenderer.sprite = growthStages[currentStage];
         UpdateColliderShape();
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
         currentStage++;
         if (useAnimation) anim.SetInteger("currentStage", currentStage);
     }

@@ -2942,6 +2942,26 @@ PrefabInstance:
       propertyPath: interactedSprite
       value: 
       objectReference: {fileID: -9219901901344619366, guid: 2ebd5f26ec5434d768f919fc346f8056, type: 3}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Path
+      value: event:/Puzzles/Level2/Crystal 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data1
+      value: -570831285
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data2
+      value: 1341839598
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data3
+      value: 313708965
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data4
+      value: -1211575414
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3435,6 +3455,26 @@ PrefabInstance:
       propertyPath: interactedSprite
       value: 
       objectReference: {fileID: -2398144233354167452, guid: 2ebd5f26ec5434d768f919fc346f8056, type: 3}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Path
+      value: event:/Puzzles/Level2/Crystal 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data1
+      value: 1155767342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data2
+      value: 1324254934
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data3
+      value: 943706302
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data4
+      value: -639237731
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5260,6 +5300,26 @@ PrefabInstance:
       propertyPath: interactedSprite
       value: 
       objectReference: {fileID: 5453884293409754360, guid: 2ebd5f26ec5434d768f919fc346f8056, type: 3}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Path
+      value: event:/Puzzles/Level2/Crystal 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data1
+      value: 1795563633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data2
+      value: 1320839468
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data3
+      value: -1827158122
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data4
+      value: -1006577696
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6582,6 +6642,26 @@ PrefabInstance:
       propertyPath: interactedSprite
       value: 
       objectReference: {fileID: 5505367880380756814, guid: 2ebd5f26ec5434d768f919fc346f8056, type: 3}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Path
+      value: event:/Puzzles/Level2/Mushroom 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data1
+      value: 436232127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data2
+      value: 1196789662
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data3
+      value: -1072403550
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data4
+      value: 909781200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37965,7 +38045,7 @@ GameObject:
   - component: {fileID: 670293038}
   m_Layer: 0
   m_Name: Player
-  m_TagString: player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39373,6 +39453,26 @@ PrefabInstance:
       propertyPath: interactedSprite
       value: 
       objectReference: {fileID: 4909767415763603615, guid: 2ebd5f26ec5434d768f919fc346f8056, type: 3}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Path
+      value: event:/Puzzles/Level2/Mushroom 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data1
+      value: -1304441270
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data2
+      value: 1205883087
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data3
+      value: 2091969439
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data4
+      value: 879049020
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76148,11 +76248,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385654017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e847fd20ee77b4891839e2bc50f9483a, type: 3}
+  m_Script: {fileID: 11500000, guid: 37efb956aed3f462684f1afe3a02f25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parameterName: Cavern Intensity
-  parameterValue: 0.2
+  parameterValue: 0.3
 --- !u!1001 &1408421854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81960,11 +82060,11 @@ MonoBehaviour:
     Path: event:/Cat/Splat
   <death>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 940897083
+      Data2: 1289475759
+      Data3: -1895967822
+      Data4: 69666279
+    Path: event:/Cat/SadMeow
   <hiss>k__BackingField:
     Guid:
       Data1: -1801876489
@@ -82050,6 +82150,27 @@ MonoBehaviour:
       Data4: 0
     Path: 
   <crystal_3>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <mushroom_1>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <mushroom_2>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <mushroom_3>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
@@ -83685,6 +83806,26 @@ PrefabInstance:
       propertyPath: interactedSprite
       value: 
       objectReference: {fileID: -1521079500316099529, guid: 2ebd5f26ec5434d768f919fc346f8056, type: 3}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Path
+      value: event:/Puzzles/Level2/Mushroom 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data1
+      value: 658388185
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data2
+      value: 1177731212
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data3
+      value: -1989492578
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601649339791512088, guid: 26f3d326e301043e596ba3c41cc8f016, type: 3}
+      propertyPath: <fmodEventPath>k__BackingField.Guid.Data4
+      value: 666822268
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
     private EventInstance musicEventInstance;
     private EventInstance ambienceEventInstance;
+    private EventInstance ambienceCaveEventInstance;
     public static AudioManager instance { get; private set; }
 
     private void Awake()
@@ -28,8 +29,9 @@ public class AudioManager : MonoBehaviour
         InitializeAmbience(FMODEvents.instance.ambienceLevelOne);
         AudioManager.instance.SetAmbienceParameter("Ambience Intensity",0.2f);
         InitializeMusic(FMODEvents.instance.musicLevelOne);
-        InitializeAmbience(FMODEvents.instance.ambienceLevelTwo);
-        AudioManager.instance.SetAmbienceParameter("Cavern Intensity",0.0f);
+        
+        InitializeCaveAmbience(FMODEvents.instance.ambienceLevelTwo);
+        AudioManager.instance.SetAmbienceCaveParameter("Cavern Intensity",0.0f);
     }
 
     public void InitializeAmbience(EventReference ambienceEventReference)
@@ -38,9 +40,19 @@ public class AudioManager : MonoBehaviour
         ambienceEventInstance.start();
     }
 
+    public void InitializeCaveAmbience(EventReference ambienceCaveEventReference)
+    {
+        ambienceCaveEventInstance = RuntimeManager.CreateInstance(ambienceCaveEventReference);
+        ambienceCaveEventInstance.start();
+    }
+
     public void SetAmbienceParameter(String parameterName, float parameterValue)
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+    public void SetAmbienceCaveParameter(String parameterName, float parameterValue)
+    {
+        ambienceCaveEventInstance.setParameterByName(parameterName, parameterValue);
     }
     public void SetMusicArea(MusicArea area)
     {
@@ -50,6 +62,8 @@ public class AudioManager : MonoBehaviour
     {
         RuntimeManager.PlayOneShot(sounds, worldpos);
     }
+
+
 
     public EventInstance CreateEventInstance(EventReference eventReference)
     {

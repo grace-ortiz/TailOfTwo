@@ -66,6 +66,15 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Crystal 3 SFX")]
     [field: SerializeField] public FMODUnity.EventReference crystal_3 {get; private set;}
     
+    [field: Header("Mushroom 1 SFX")]
+    [field: SerializeField] public FMODUnity.EventReference mushroom_1 {get; private set;}
+
+    [field: Header("Mushroom 2 SFX")]
+    [field: SerializeField] public FMODUnity.EventReference mushroom_2 {get; private set;}
+
+    [field: Header("Mushroom 3 SFX")]
+    [field: SerializeField] public FMODUnity.EventReference mushroom_3 {get; private set;}
+    
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

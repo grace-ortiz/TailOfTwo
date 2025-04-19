@@ -132,6 +132,7 @@ public class PlayerMovement : MonoBehaviour {
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
             anim.SetTrigger("hasFallen");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
 
