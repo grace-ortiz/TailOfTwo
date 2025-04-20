@@ -1,13 +1,21 @@
 using UnityEngine;
-
+using FMODUnity;
+using FMOD.Studio;
 public class Destroyable : Interactable {
     public Sprite destroyedSprite;
     public bool isDestroyed = false;
 
-
+    [field: SerializeField] public FMODUnity.EventReference fmodEventPath2 {get; private set;}
+    private EventInstance eventInstance2;
+    // void Start()
+    // {
+    //     // Optional: Create instance ahead of time if you're reusing it
+    //     eventInstance2 = RuntimeManager.CreateInstance(fmodEventPath2);
+    // }
     public void Destroy() {
         if (!isDestroyed && spriteRenderer != null && destroyedSprite != null) {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
+            eventInstance2 = RuntimeManager.CreateInstance(fmodEventPath2);
+            AudioManager.instance.PlayOneShot(fmodEventPath2, this.transform.position);
             if (morphDuration == 0) {
                 QuickDestroy();
             }

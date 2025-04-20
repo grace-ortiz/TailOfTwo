@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TailOfTwo.sln"
+    "dotnet.defaultSolution": "SpiritCat.sln"
 }
