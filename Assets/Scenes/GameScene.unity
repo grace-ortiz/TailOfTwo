@@ -38761,7 +38761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dac696c68e8341aab67ec33917bdad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCharges: 3
+  maxCharges: 1
   playerMovement: {fileID: 670293034}
 --- !u!95 &670293038
 Animator:
