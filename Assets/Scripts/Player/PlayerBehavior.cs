@@ -27,24 +27,24 @@ public class PlayerBehavior : MonoBehaviour {
             if (currentInteractable is Growable growable && activeCharges.Count < maxCharges) {
                 growable.Grow();
                 growable.StartResetTimer(resetDuration);
-                SpendCharge(growable);
+                if (growable.currentStage < growable.growthStages.Length) SpendCharge(growable);
             }
             else if (currentInteractable is GrowableDestroyable growableDestroyable  && activeCharges.Count < maxCharges) {
                 growableDestroyable.Grow();
                 growableDestroyable.StartResetTimer(resetDuration);
-                SpendCharge(growableDestroyable);
+                if (growableDestroyable.currentStage < growableDestroyable.growthStages.Length) SpendCharge(growableDestroyable);
             }
         }
         else if (Input.GetKeyDown(KeyCode.P)) { // destroy
             if (currentInteractable is Destroyable destroyable && activeCharges.Count < maxCharges) {
                 destroyable.Destroy();
                 destroyable.StartResetTimer(resetDuration);
-                SpendCharge(destroyable);
+                if (!destroyable.isDestroyed) SpendCharge(destroyable);
             }
             else if (currentInteractable is GrowableDestroyable growableDestroyable && activeCharges.Count < maxCharges) {
                 growableDestroyable.Destroy();
                 growableDestroyable.StartResetTimer(resetDuration);
-                SpendCharge(growableDestroyable);
+                if (!growableDestroyable.isDestroyed) SpendCharge(growableDestroyable);
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) { // recall
@@ -64,7 +64,6 @@ public class PlayerBehavior : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider) {
         
         if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
-        print("entered collider");
         Interactable interactable = collider.GetComponentInParent<Interactable>();
         if (interactable != null) {
             currentInteractable = interactable;
@@ -73,7 +72,6 @@ public class PlayerBehavior : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
-        print("exited collider");
         if (!collider.CompareTag("interactable") && !collider.CompareTag("interactableDanger")) return;
 
         if (collider.GetComponentInParent<Interactable>() == currentInteractable) {
@@ -121,7 +119,7 @@ public class PlayerBehavior : MonoBehaviour {
         // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
 
-    void RecallAllCharges() {
+    public void RecallAllCharges() {
 
         if (activeCharges.Count != 0) {
             foreach (var charge in activeCharges) {

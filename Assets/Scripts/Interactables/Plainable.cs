@@ -9,13 +9,18 @@ public class Plainable : Interactable {
     public MusicPuzzle musicPuzzle;
 
     // public string fmodEventPath;
-    [field: SerializeField] public FMODUnity.EventReference fmodEventPath {get; private set;}
-    private EventInstance eventInstance;
+    // [field: SerializeField] public FMODUnity.EventReference fmodEventPath {get; private set;}
+    // private EventInstance eventInstance;
+    void Start()
+    {
+        
+        
+    }
     public void Interact() {
         // play sound
         print("SOUND HAPPENING");
-        eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
-        RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
+        // eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+        // RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
 
         if (!isInteracted && spriteRenderer != null && interactedSprite != null) {
             spriteRenderer.sprite = interactedSprite;

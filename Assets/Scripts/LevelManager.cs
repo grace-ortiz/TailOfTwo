@@ -3,6 +3,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private bool playerInside = false;
+    public GameObject deactivated_bg;
+    public GameObject deactivated_bg1;
 
     private void Start()
     {
@@ -15,6 +17,8 @@ public class LevelManager : MonoBehaviour
         {
             playerInside = true;
             SetChildrenActive(true);
+            if (deactivated_bg != null) deactivated_bg.SetActive(false);
+            if (deactivated_bg1 != null) deactivated_bg1.SetActive(false);
         }
     }
 
@@ -24,6 +28,8 @@ public class LevelManager : MonoBehaviour
         {
             playerInside = false;
             SetChildrenActive(false);
+            if (deactivated_bg != null) deactivated_bg.SetActive(true);
+            if (deactivated_bg1 != null) deactivated_bg1.SetActive(true);
         }
     }
 
