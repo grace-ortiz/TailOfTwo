@@ -10,7 +10,7 @@ public class ActiveCharge {
 public class PlayerBehavior : MonoBehaviour {
     private Interactable currentInteractable;
     private List<ActiveCharge> activeCharges = new List<ActiveCharge>(4);
-    private float resetDuration = 5f;
+    private float resetDuration = 8f;
     public int maxCharges = 1;
     private Color interactColor = new Color(1.15f, 1.15f, 1.15f);
     public PlayerMovement playerMovement;
