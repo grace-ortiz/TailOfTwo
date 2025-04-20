@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
-    public bool playOnce = false; // 💡 new toggle in Inspector
+    public bool playOnce = false; 
     private bool hasPlayed = false;
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
             if (playOnce && hasPlayed)
                 return;
 
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
 
             if (playOnce)
                 hasPlayed = true;

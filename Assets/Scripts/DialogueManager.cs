@@ -141,7 +141,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueBox.activeSelf && Input.GetKeyDown(KeyCode.Return))
+        if (dialogueBox.activeSelf && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)))
         {
             if (isTyping)
             {
