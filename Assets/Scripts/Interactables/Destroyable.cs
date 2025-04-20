@@ -5,8 +5,8 @@ public class Destroyable : Interactable {
     public Sprite destroyedSprite;
     public bool isDestroyed = false;
 
-    [field: SerializeField] public FMODUnity.EventReference fmodEventPath2 {get; private set;}
-    private EventInstance eventInstance2;
+    // [field: SerializeField] public FMODUnity.EventReference fmodEventPath2 {get; private set;}
+    // private EventInstance eventInstance2;
     // void Start()
     // {
     //     // Optional: Create instance ahead of time if you're reusing it
@@ -14,8 +14,6 @@ public class Destroyable : Interactable {
     // }
     public void Destroy() {
         if (!isDestroyed && spriteRenderer != null && destroyedSprite != null) {
-            eventInstance2 = RuntimeManager.CreateInstance(fmodEventPath2);
-            AudioManager.instance.PlayOneShot(fmodEventPath2, this.transform.position);
             if (morphDuration == 0) {
                 QuickDestroy();
             }

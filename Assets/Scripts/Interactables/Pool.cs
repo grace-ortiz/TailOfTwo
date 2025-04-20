@@ -6,18 +6,21 @@ public class Pool : Interactable {
     [SerializeField] private Transform mainRespawnPoint;
 
     private bool isInteracted = false;
+    private PlayerBehavior player;
 
     public void Start() {
         isInteracted = false;
+        player = FindFirstObjectByType<PlayerBehavior>();
+        
     }
     public void Interact()
     {
         if (isInteracted) return;
 
-        PlayerBehavior player = FindFirstObjectByType<PlayerBehavior>();
         if (player != null)
         {
             player.SetMaxCharges(player.maxCharges + 1);
+            player.RecallAllCharges();
             isInteracted = true;
 
             if (mainRespawnPoint != null)
@@ -30,6 +33,10 @@ public class Pool : Interactable {
                 Debug.LogWarning("Main respawn point is not assigned.");
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        player.RecallAllCharges();
     }
     
 

@@ -13,12 +13,13 @@ public class Plainable : Interactable {
     private EventInstance eventInstance;
     void Start()
     {
-        // Optional: Create instance ahead of time if you're reusing it
-        eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+        
+        
     }
     public void Interact() {
         // play sound
         print("SOUND HAPPENING");
+        eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
         RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
 
         if (!isInteracted && spriteRenderer != null && interactedSprite != null) {
