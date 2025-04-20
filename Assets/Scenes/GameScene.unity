@@ -3371,8 +3371,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 474, y: 96}
-  m_SizeDelta: {x: 1459.623, y: 68.0671}
+  m_AnchoredPosition: {x: 393.1018, y: 96}
+  m_SizeDelta: {x: 776.6007, y: 68.0671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25716560
 MonoBehaviour:
@@ -3428,8 +3428,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3459,7 +3459,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 477.68124, y: 0, z: 424.57877, w: 0.7506791}
+  m_margin: {x: 0.39834607, y: 0, z: 2.0961607, w: 0.7506791}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3803,9 +3803,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Fish
   prompt: 
-  sentence: "If I\u2019m right, your \u2018O\u2019 power should call on the forces
-    of chaos to grow, and your \u2018P\u2019 calls on order to destroy. If you want
-    to recall your charges, you can press shift!"
+  sentence: "If I\u2019m right, your [O] power should call on the forces of chaos
+    to grow, and your [P] calls on order to destroy. If you want to recall your charges,
+    you can press [Shift]!"
 --- !u!1001 &93753162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4537,53 +4537,6 @@ Transform:
   - {fileID: 1942104365}
   m_Father: {fileID: 1724847170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &111405917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 111405918}
-  - component: {fileID: 111405919}
-  m_Layer: 0
-  m_Name: Line (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &111405918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111405917}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0868552, y: -3.0024338, z: 460.71417}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 811635670}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &111405919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111405917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0796bd1baed194a279c2699e6a59c8dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerName: Cat
-  prompt: 
-  sentence: ...Christa...?
 --- !u!1 &119748738
 GameObject:
   m_ObjectHideFlags: 0
@@ -40469,8 +40422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Fish
   prompt: 
-  sentence: "I\u2019m not sure how I know all this\u2026 it feels like Christa\u2019s
-    telling me to say it."
+  sentence: "I\u2019m not sure how I know all this\u2026"
 --- !u!1 &617211899
 GameObject:
   m_ObjectHideFlags: 0
@@ -44154,7 +44106,7 @@ PrefabInstance:
     - target: {fileID: 2845531653445777017, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: 'lines.Array.data[9]'
       value: 
-      objectReference: {fileID: 111405919}
+      objectReference: {fileID: 0}
     - target: {fileID: 4868650725029927314, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: playOnce
       value: 1
@@ -44198,9 +44150,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3165282788816742608, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 603724931}
-    - targetCorrespondingSourceObject: {fileID: 3165282788816742608, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111405918}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
 --- !u!4 &811635669 stripped
@@ -88223,8 +88172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 99}
-  m_SizeDelta: {x: 1459.623, y: 68.0671}
+  m_AnchoredPosition: {x: -512.49, y: 99}
+  m_SizeDelta: {x: 572.72, y: 68.0671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296546630
 MonoBehaviour:
@@ -88281,7 +88230,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -88311,7 +88260,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 896.0164, w: 0.7506791}
+  m_margin: {x: 0, y: 0, z: -1.0948792, w: 0.7506791}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -90010,7 +89959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Fish
   prompt: 
-  sentence: "You can press \u2018E\u2019 to interact with some specific items. "
+  sentence: 'You can press [E] to interact with some specific items. '
 --- !u!1 &1527051389
 GameObject:
   m_ObjectHideFlags: 0
@@ -91890,7 +91839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: prompt
-      value: Press 'Enter'
+      value: Press 'Enter' to continue
       objectReference: {fileID: 0}
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: sentence
@@ -93446,7 +93395,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: sentence
-      value: Seems like you can press E to interact with these as well...
+      value: Seems like you can press [E] to interact with these as well...
       objectReference: {fileID: 0}
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: speakerName
@@ -95773,8 +95722,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Fish
   prompt: 
-  sentence: "I\u2019m not sure, it\u2019s just a feeling I have. Try hitting O or
-    P to interact with it."
+  sentence: "I\u2019m not sure, it\u2019s just a feeling I have. Try hitting [O]
+    or [P] to interact with it."
 --- !u!1 &1992770104
 GameObject:
   m_ObjectHideFlags: 0
@@ -96046,8 +95995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Fish
   prompt: 
-  sentence: You can move around with A and D and use W or Space to jump. You can
-    use Esc to pause the game.
+  sentence: You can move around with [A] and [D] and use [W] or [Space] to jump.
+    To pause the game and see all the controls, press [Esc].
 --- !u!1 &2026902868
 GameObject:
   m_ObjectHideFlags: 0
