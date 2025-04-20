@@ -23,7 +23,7 @@ public class GrowableDestroyable : Interactable
             ResetInteraction();
         }
         else if (currentStage < growthStages.Length) {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
+            // AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             if (morphDuration == 0) {
                 QuickGrow();
             }

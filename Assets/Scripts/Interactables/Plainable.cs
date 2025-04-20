@@ -11,11 +11,6 @@ public class Plainable : Interactable {
     // public string fmodEventPath;
     // [field: SerializeField] public FMODUnity.EventReference fmodEventPath {get; private set;}
     // private EventInstance eventInstance;
-    void Start()
-    {
-        
-        
-    }
     public void Interact() {
         // play sound
         print("SOUND HAPPENING");

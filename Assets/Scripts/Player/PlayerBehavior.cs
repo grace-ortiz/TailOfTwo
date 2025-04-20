@@ -25,26 +25,26 @@ public class PlayerBehavior : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.O)) { // grow
 
             if (currentInteractable is Growable growable && activeCharges.Count < maxCharges) {
+                if (growable.currentStage < growable.growthStages.Length) SpendCharge(growable);
                 growable.Grow();
                 growable.StartResetTimer(resetDuration);
-                if (growable.currentStage < growable.growthStages.Length) SpendCharge(growable);
             }
             else if (currentInteractable is GrowableDestroyable growableDestroyable  && activeCharges.Count < maxCharges) {
+                if (growableDestroyable.currentStage < growableDestroyable.growthStages.Length || growableDestroyable.isDestroyed) SpendCharge(growableDestroyable);
                 growableDestroyable.Grow();
                 growableDestroyable.StartResetTimer(resetDuration);
-                if (growableDestroyable.currentStage < growableDestroyable.growthStages.Length) SpendCharge(growableDestroyable);
             }
         }
         else if (Input.GetKeyDown(KeyCode.P)) { // destroy
             if (currentInteractable is Destroyable destroyable && activeCharges.Count < maxCharges) {
+                if (!destroyable.isDestroyed) SpendCharge(destroyable);
                 destroyable.Destroy();
                 destroyable.StartResetTimer(resetDuration);
-                if (!destroyable.isDestroyed) SpendCharge(destroyable);
             }
             else if (currentInteractable is GrowableDestroyable growableDestroyable && activeCharges.Count < maxCharges) {
+                if (!growableDestroyable.isDestroyed) SpendCharge(growableDestroyable);
                 growableDestroyable.Destroy();
                 growableDestroyable.StartResetTimer(resetDuration);
-                if (!growableDestroyable.isDestroyed) SpendCharge(growableDestroyable);
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) { // recall
@@ -93,7 +93,7 @@ public class PlayerBehavior : MonoBehaviour {
         Coroutine recallCoroutine = StartCoroutine(AutoRecall(target));
         activeCharges.Add(new ActiveCharge { interactable = target, recallCoroutine = recallCoroutine });
         playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
-        // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
+        Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
     IEnumerator AutoRecall(Interactable target) {
         yield return new WaitForSeconds(resetDuration);
@@ -116,7 +116,7 @@ public class PlayerBehavior : MonoBehaviour {
         target.CancelResetTimer();
         target.ResetInteraction();
         playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
-        // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
+        Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
 
     public void RecallAllCharges() {
@@ -133,7 +133,7 @@ public class PlayerBehavior : MonoBehaviour {
 
         activeCharges.Clear();
         playerMovement.anim.SetInteger("currCharges", maxCharges - activeCharges.Count);
-        // Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
+        Debug.Log("currCharges:" + (maxCharges - activeCharges.Count));
     }
 
     public void SetMaxCharges(int newMax) {
