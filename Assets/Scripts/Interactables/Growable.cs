@@ -14,7 +14,7 @@ public class Growable : Interactable {
 
 
         if (currentStage < growthStages.Length) {
-            // AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
             if (morphDuration == 0) {
                 QuickGrow();
             }

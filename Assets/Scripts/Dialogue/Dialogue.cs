@@ -5,5 +5,5 @@ using UnityEngine;
 public class Dialogue : MonoBehaviour
 {
     public DialogueLine[] lines;
-    public float textSpeed = 0.02f;
+    public float textSpeed = 0.05f;
 }

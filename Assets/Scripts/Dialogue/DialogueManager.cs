@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (playerMovement != null)
         {
-            playerMovement.enabled = false; //Stops input on dialogue
+            playerMovement.canControl = false; //Stops input on dialogue
         }
 
         if (playerRb != null)
@@ -130,7 +130,7 @@ public class DialogueManager : MonoBehaviour
 
         if (playerMovement != null)
         {
-            playerMovement.enabled = true; //resumes movement
+            playerMovement.canControl = true; //resumes movement
         }
 
         if (onDialogueComplete != null){
@@ -141,7 +141,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueBox.activeSelf && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)))
+        if (dialogueBox.activeSelf && Input.GetKeyDown(KeyCode.Return))
         {
             if (isTyping)
             {

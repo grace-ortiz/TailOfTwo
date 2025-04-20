@@ -52,6 +52,6 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene(0); // StartScene
     }
 
-    // public void SetMusicVolume() { AudioManager.Instance.ChangeMusicVolume(SliderMusic.value); }
-    // public void SetSFXVolume() { AudioManager.Instance.ChangeSFXVolume(SliderSFX.value); }
+    // public void SetMusicVolume() { AudioManager.instance.ChangeMusicVolume(SliderMusic.value); }
+    // public void SetSFXVolume() { AudioManager.instance.ChangeSFXVolume(SliderSFX.value); }
 }

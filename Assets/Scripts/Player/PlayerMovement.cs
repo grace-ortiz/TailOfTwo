@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool resetJumpNeeded = false;
     private bool canJump = true;
     private float maxHeightBeforeFall;
-    private bool canControl = true;
+    public bool canControl = true;
     private EventInstance walk;
 
 
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded() == true && canJump) {
             PlayerRB.linearVelocity = new UnityEngine.Vector2(PlayerRB.linearVelocity.x, JumpStrength);
-            // AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
             anim.SetBool("IsGrounded", false);
 
         } 
@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour {
         if (collider.CompareTag("danger") || collider.CompareTag("interactableDanger"))
         {
             anim.SetTrigger("hasFallen");
-            // AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
 
@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour {
             isFalling = false;
             if (fallDistance > fallThreshold) {
                 Debug.Log("Player fell! Fall distance: " + fallDistance);
-                // AudioManager.instance.PlayOneShot(FMODEvents.instance.splat, this.transform.position);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.splat, this.transform.position);
                 anim.SetTrigger("hasFallen");
                 StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             }

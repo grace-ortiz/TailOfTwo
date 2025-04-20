@@ -11,7 +11,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //Debug.Log("Trigger entered by: " + other.name);
             if (playOnce && hasPlayed)
                 return;
 
