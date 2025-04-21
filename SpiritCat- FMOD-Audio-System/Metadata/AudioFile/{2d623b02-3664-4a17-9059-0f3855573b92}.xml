@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{2d623b02-3664-4a17-9059-0f3855573b92}">
 		<property name="assetPath">
-			<value>Crystal2.wav</value>
+			<value>Level 2/Crystal2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
