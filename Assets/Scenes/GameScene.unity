@@ -3337,6 +3337,142 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &25716558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25716559}
+  - component: {fileID: 25716561}
+  - component: {fileID: 25716560}
+  m_Layer: 5
+  m_Name: Subtext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &25716559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25716558}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8963572, y: 0.6630562, z: 0.98232}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 869737572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 393.1018, y: 96}
+  m_SizeDelta: {x: 776.6007, y: 68.0671}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &25716560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25716558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281878107
+  m_fontColor: {r: 0.3584906, g: 0.27537104, b: 0.21813814, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 45
+  m_fontSizeBase: 45
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0.39834607, y: 0, z: 2.0961607, w: 0.7506791}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &25716561
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25716558}
+  m_CullTransparentMesh: 1
 --- !u!1 &32554109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3666,9 +3802,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
-  sentence: "If I\u2019m right, your \u2018O\u2019 power should call on the forces
-    of chaos to grow, and your \u2018P\u2019 calls on order to destroy. If you want
-    to recall your charges, you can press shift!"
+  prompt: 
+  sentence: "If I\u2019m right, your [O] power should call on the forces of chaos
+    to grow, and your [P] calls on order to destroy. If you want to recall your charges,
+    you can press [Shift]!"
 --- !u!1001 &93753162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4400,52 +4537,6 @@ Transform:
   - {fileID: 1942104365}
   m_Father: {fileID: 1724847170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &111405917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 111405918}
-  - component: {fileID: 111405919}
-  m_Layer: 0
-  m_Name: Line (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &111405918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111405917}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0868552, y: -3.0024338, z: 460.71417}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 811635670}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &111405919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111405917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0796bd1baed194a279c2699e6a59c8dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerName: Cat
-  sentence: ...Christa...?
 --- !u!1 &119748738
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,6 +5431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: are you calling me fat????
 --- !u!1 &224154046
 GameObject:
@@ -6054,6 +6146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "no\u2026 not this one either."
 --- !u!1001 &283645499
 PrefabInstance:
@@ -6902,6 +6995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "I can\u2019t help but feel like there\u2019s no way to find where I
     belong.\n\n"
 --- !u!1 &327962896
@@ -7056,6 +7150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: ...maybe one of them is my home.
 --- !u!1001 &362866746
 PrefabInstance:
@@ -7220,6 +7315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1296546630}
   dialogueText: {fileID: 3605962}
+  subText: {fileID: 25716560}
   dialogueBox: {fileID: 869737571}
   animator: {fileID: 869737573}
   textSpeed: 0.05
@@ -37358,6 +37454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: okay... where are we going though?
 --- !u!1 &448872478
 GameObject:
@@ -39708,7 +39805,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.51, y: -1.5, z: -15}
+  m_LocalPosition: {x: -3.5, y: 0, z: -15}
   m_LocalScale: {x: 2.9514234, y: 0.19102682, z: 1.9103065}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40324,8 +40421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
-  sentence: "I\u2019m not sure how I know all this\u2026 it feels like Christa\u2019s
-    telling me to say it."
+  prompt: 
+  sentence: "I\u2019m not sure how I know all this\u2026"
 --- !u!1 &617211899
 GameObject:
   m_ObjectHideFlags: 0
@@ -40429,6 +40526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: ' Past the cave?'
 --- !u!1 &622384358 stripped
 GameObject:
@@ -40980,6 +41078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: yeah... that tablet? I wonder what it says...
 --- !u!1 &657975770
 GameObject:
@@ -41113,6 +41212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: thats what justin told me to say anyway
 --- !u!1 &663432303 stripped
 GameObject:
@@ -41210,7 +41310,7 @@ Transform:
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.51, y: -2.5, z: 0}
+  m_LocalPosition: {x: -3.5, y: -1, z: 0}
   m_LocalScale: {x: 0.898319, y: 0.898319, z: 0.898319}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41391,6 +41491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: what do you mean?
 --- !u!1 &680633374
 GameObject:
@@ -42091,6 +42192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: 'is it calling to you?
 
 '
@@ -43080,6 +43182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: 'Yes, can we try heading there?
 
 
@@ -43232,6 +43335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: help me! help me! how did I get here?
 --- !u!1 &781210154
 GameObject:
@@ -44002,7 +44106,7 @@ PrefabInstance:
     - target: {fileID: 2845531653445777017, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: 'lines.Array.data[9]'
       value: 
-      objectReference: {fileID: 111405919}
+      objectReference: {fileID: 0}
     - target: {fileID: 4868650725029927314, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: playOnce
       value: 1
@@ -44046,9 +44150,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3165282788816742608, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 603724931}
-    - targetCorrespondingSourceObject: {fileID: 3165282788816742608, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111405918}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
 --- !u!4 &811635669 stripped
@@ -47758,6 +47859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "Let\u2019s use the pool again to power up."
 --- !u!1 &869737571
 GameObject:
@@ -47793,6 +47895,7 @@ RectTransform:
   m_Children:
   - {fileID: 3605961}
   - {fileID: 1296546629}
+  - {fileID: 25716559}
   - {fileID: 687386431}
   m_Father: {fileID: 777445745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48199,6 +48302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: power?
 --- !u!1 &890146882
 GameObject:
@@ -48854,6 +48958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "didn\u2019t you notice that flame on your tail? You should try using
     that power on the flower here."
 --- !u!1 &938125851
@@ -49649,6 +49754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "But at the same time\u2026 something is calling to me deeper in the
     desert.\n"
 --- !u!1 &1019860157
@@ -49893,6 +49999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: Let's try exploring around to find one
 --- !u!1 &1028510991
 GameObject:
@@ -50418,6 +50525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: whuhhhh...?
 --- !u!1001 &1063934535
 PrefabInstance:
@@ -50652,6 +50760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: 'Sure...?
 
 '
@@ -86810,6 +86919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: so this is it? This is where you belong?
 --- !u!1 &1168437705
 GameObject:
@@ -87230,6 +87340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "To get back faster, let\u2019s use the pool to teleport! The water should
     bring us back to where we woke up and maybe power you up as well.\n"
 --- !u!1 &1215923521
@@ -88061,8 +88172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 99}
-  m_SizeDelta: {x: 1459.623, y: 68.0671}
+  m_AnchoredPosition: {x: -512.49, y: 99}
+  m_SizeDelta: {x: 572.72, y: 68.0671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296546630
 MonoBehaviour:
@@ -88119,7 +88230,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -88149,7 +88260,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.29022223, w: 0.7506791}
+  m_margin: {x: 0, y: 0, z: -1.0948792, w: 0.7506791}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -88442,6 +88553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: Maybe we should try going the other direction.
 --- !u!1 &1332745127
 GameObject:
@@ -89724,6 +89836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: how am i supposed to know...?
 --- !u!1 &1508174348
 GameObject:
@@ -89845,7 +89958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
-  sentence: "You can press \u2018E\u2019 to interact with some specific items. "
+  prompt: 
+  sentence: 'You can press [E] to interact with some specific items. '
 --- !u!1 &1527051389
 GameObject:
   m_ObjectHideFlags: 0
@@ -89981,6 +90095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: what does that even mean...
 --- !u!1 &1533313553
 GameObject:
@@ -90420,7 +90535,7 @@ Transform:
   m_GameObject: {fileID: 1540135523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.51, y: -1.5, z: -15}
+  m_LocalPosition: {x: -3.5, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91723,6 +91838,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1927533622}
     m_Modifications:
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
+      propertyPath: prompt
+      value: Press 'Enter' to continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: sentence
       value: wake up! wake up!
       objectReference: {fileID: 0}
@@ -92338,6 +92457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: "bruh\u2026."
 --- !u!1 &1721274567
 GameObject:
@@ -92788,6 +92908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: I'm not sure, that's just what the devs told me to say.
 --- !u!1 &1736828329
 GameObject:
@@ -93274,7 +93395,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: sentence
-      value: Seems like you can press E to interact with these as well...
+      value: Seems like you can press [E] to interact with these as well...
       objectReference: {fileID: 0}
     - target: {fileID: 446435730852467220, guid: 63a9254c7f5126641b2e2887e9b71a4f, type: 3}
       propertyPath: speakerName
@@ -93395,6 +93516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Cat
+  prompt: 
   sentence: 'justin..?
 
 '
@@ -93724,6 +93846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: i don't know why but i have this feeling that there are pools in different
     places in the world...
 --- !u!1 &1789444112
@@ -93771,6 +93894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: We can take a closer look...
 --- !u!1 &1796847497
 GameObject:
@@ -94351,6 +94475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: depending on the object, your different powers may or may not have an
     effect.
 --- !u!1001 &1874936771
@@ -94734,6 +94859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: i'm not where i belong...will you help me find my home?
 --- !u!1 &1927533621
 GameObject:
@@ -95084,6 +95210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
+  prompt: 
   sentence: "oh nah\u2026 i don't mess with these fish\u2026\n"
 --- !u!4 &1956650140 stripped
 Transform:
@@ -95594,8 +95721,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
-  sentence: "I\u2019m not sure, it\u2019s just a feeling I have. Try hitting O or
-    P to interact with it."
+  prompt: 
+  sentence: "I\u2019m not sure, it\u2019s just a feeling I have. Try hitting [O]
+    or [P] to interact with it."
 --- !u!1 &1992770104
 GameObject:
   m_ObjectHideFlags: 0
@@ -95866,8 +95994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Fish
-  sentence: You can move around with A and D and use W or Space to jump. You can
-    use Esc to pause the game.
+  prompt: 
+  sentence: You can move around with [A] and [D] and use [W] or [Space] to jump.
+    To pause the game and see all the controls, press [Esc].
 --- !u!1 &2026902868
 GameObject:
   m_ObjectHideFlags: 0

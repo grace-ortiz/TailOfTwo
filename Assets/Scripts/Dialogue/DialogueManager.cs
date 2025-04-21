@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI subText;
     public GameObject dialogueBox;
     public Animator animator;
     public float textSpeed;
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         if (playerAnimator != null)
         {
             playerAnimator.SetBool("isWalking", false); // Stops walking animation
+            playerAnimator.SetBool("isJumping", false);
         }
 
 
@@ -105,6 +107,7 @@ public class DialogueManager : MonoBehaviour
 
         StopAllCoroutines();
         nameText.text = line.speakerName;
+        subText.text = line.prompt;
         StartCoroutine(TypeSentence(line.sentence));
     }
 
