@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: ba931eda016a64fcc938b0515e8db177
+guid: 2e6070db8f48d4ab19ee48440b39d486
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6068128913834266260
-    second: stolen_pillar__0
-  - first:
-      213: -8078848050707240010
-    second: stolen_pillar__1
-  - first:
-      213: -2508047747708310213
-    second: stolen_pillar__2
+      213: 1345218234957629587
+    second: icon 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,71 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stolen_pillar__0
+      name: icon 1_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 0
-        width: 55
-        height: 83
-      alignment: 6
+        y: 39
+        width: 242
+        height: 178
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape:
-      - - {x: 0.5, y: -41.5}
-        - {x: 27.5, y: -41.5}
-        - {x: 16.5, y: -12.5}
-        - {x: 20.5, y: 18.5}
-        - {x: 24.5, y: 40.5}
-        - {x: 7.5, y: 40.5}
-        - {x: -1.5, y: 40.5}
-        - {x: -11.5, y: 40.5}
-        - {x: -27.5, y: 40.5}
-        - {x: -25.5, y: 25.5}
-        - {x: -17.5, y: 12.5}
-        - {x: -18.5, y: -13.5}
-        - {x: -26.5, y: -41.5}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: 49e4e58c813563450800000000000000
-      internalID: 6068128913834266260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stolen_pillar__1
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 0
-        width: 123
-        height: 42
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape:
-      - - {x: 0.5, y: -21}
-        - {x: 61.5, y: -21}
-        - {x: 58.5, y: 4}
-        - {x: 43.5, y: 1}
-        - {x: 28.5, y: 6}
-        - {x: 14.5, y: 13}
-        - {x: 2.5, y: 6}
-        - {x: -2.5, y: -5}
-        - {x: -15.5, y: -3}
-        - {x: -22.5, y: 16}
-        - {x: -44.5, y: 20}
-        - {x: -49.5, y: -4}
-        - {x: -60.5, y: -21}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bbec3f508a22ef80800000000000000
-      internalID: -8078848050707240010
+      spriteID: 39807008bdc2ba210800000000000000
+      internalID: 1345218234957629587
       vertices: []
       indices: 
       edges: []
@@ -192,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2f2b26c1f52394fbfad993acbd091ecb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -201,10 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      stolen_pillar__0: 6068128913834266260
-      stolen_pillar__1: -8078848050707240010
-      stolen_pillar__2: -2508047747708310213
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
