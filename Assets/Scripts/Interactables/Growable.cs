@@ -1,20 +1,26 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
+using FMODUnity;
 
 public class Growable : Interactable {
     public Sprite[] growthStages; // add as many growth stages as you want here, don't include the base sprite 
     
-    public int currentStage = 0; // stage 0 is the base sprite itself 
+    public int currentStage { get; private set; } = 0; // stage 0 is the base sprite itself 
     
-
     public void Grow() {
         if (spriteRenderer == null || growthStages == null || growthStages.Length == 0)
             return;
 
 
         if (currentStage < growthStages.Length) {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
+
+            if (!fmodEventPath.IsNull) {
+                eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+                RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
+            }
+            else {
+                Debug.Log("No FMOD event path!");
+            }
+
             if (morphDuration == 0) {
                 QuickGrow();
             }
@@ -32,7 +38,6 @@ public class Growable : Interactable {
     private void QuickGrow() {
         spriteRenderer.sprite = growthStages[currentStage];
         UpdateColliderShape();
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.growPlantSound, this.transform.position);
         currentStage++;
         if (useAnimation) anim.SetInteger("currentStage", currentStage);
     }

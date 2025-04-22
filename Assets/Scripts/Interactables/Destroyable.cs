@@ -1,19 +1,27 @@
 using UnityEngine;
 using FMODUnity;
-using FMOD.Studio;
+
 public class Destroyable : Interactable {
     public Sprite destroyedSprite;
-    public bool isDestroyed = false;
+    public bool isDestroyed { get; private set; } = false;
+    public bool disableColliderOnDestroy = false;
 
-    // [field: SerializeField] public FMODUnity.EventReference fmodEventPath2 {get; private set;}
-    // private EventInstance eventInstance2;
-    // void Start()
-    // {
-    //     // Optional: Create instance ahead of time if you're reusing it
-    //     eventInstance2 = RuntimeManager.CreateInstance(fmodEventPath2);
-    // }
+
     public void Destroy() {
         if (!isDestroyed && spriteRenderer != null && destroyedSprite != null) {
+
+            if (!fmodEventPath.IsNull) {
+                eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+                RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
+            }
+            else {
+                Debug.Log("No FMOD event path!");
+            }
+            
+            if (disableColliderOnDestroy) {
+                polygonCollider.enabled = false;
+            }
+
             if (morphDuration == 0) {
                 QuickDestroy();
             }
@@ -38,6 +46,9 @@ public class Destroyable : Interactable {
     public override void ResetInteraction() {
         spriteRenderer.sprite = baseSprite;
         UpdateColliderShape();
+        if (disableColliderOnDestroy) {
+            polygonCollider.enabled = true;
+        }
         isDestroyed = false;
         if (useAnimation) anim.SetBool("isDestroyed", false);
     }

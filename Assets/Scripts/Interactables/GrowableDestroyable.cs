@@ -1,4 +1,6 @@
 using UnityEngine;
+using FMODUnity;
+
 
 public class GrowableDestroyable : Interactable
 {
@@ -6,7 +8,7 @@ public class GrowableDestroyable : Interactable
     public Sprite destroyedSprite;
 
     public int currentStage = 0;
-    public bool isDestroyed = false;
+    public bool isDestroyed { get; private set; } = false;
 
     public GDInteractType interactionType = GDInteractType.Grow;
 
@@ -23,7 +25,14 @@ public class GrowableDestroyable : Interactable
             ResetInteraction();
         }
         else if (currentStage < growthStages.Length) {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
+            if (!fmodEventPath.IsNull) {
+                eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+                RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
+            }
+            else {
+                Debug.Log("No FMOD event path!");
+            }
+
             if (morphDuration == 0) {
                 QuickGrow();
             }
@@ -37,6 +46,15 @@ public class GrowableDestroyable : Interactable
         interactionType = GDInteractType.Destroy;
 
         if (spriteRenderer != null && destroyedSprite != null && !isDestroyed) {
+
+            if (!fmodEventPath.IsNull) {
+                eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+                RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
+            }
+            else {
+                Debug.Log("No FMOD event path!");
+            }
+
             if (morphDuration == 0) {
                 QuickDestroy();
             }

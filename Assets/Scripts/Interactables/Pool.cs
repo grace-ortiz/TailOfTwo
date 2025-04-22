@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;
+using FMODUnity;
 
 public class Pool : Interactable {
 
@@ -19,6 +19,14 @@ public class Pool : Interactable {
 
         if (player != null)
         {
+            if (!fmodEventPath.IsNull) {
+                eventInstance = RuntimeManager.CreateInstance(fmodEventPath);
+                RuntimeManager.PlayOneShot(fmodEventPath, this.transform.position);
+            }
+            else {
+                Debug.Log("No FMOD event path!");
+            }
+
             player.SetMaxCharges(player.maxCharges + 1);
             player.RecallAllCharges();
             isInteracted = true;

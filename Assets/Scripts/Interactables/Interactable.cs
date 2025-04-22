@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
+using FMOD.Studio;
 
 
 
@@ -15,6 +17,9 @@ public abstract class Interactable : MonoBehaviour {
     public bool useAnimation = true;
     protected Animator anim;
     public float morphDuration = 0.5f;
+
+    [field: SerializeField] public EventReference fmodEventPath {get; private set;}
+    protected EventInstance eventInstance;
     
 
     public abstract void ResetInteraction();
