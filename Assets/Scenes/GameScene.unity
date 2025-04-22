@@ -43623,8 +43623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e6917212b354ed7b541bfebeb7fdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deactivated_bg: {fileID: 1087058699}
-  deactivated_bg1: {fileID: 1195044375}
+  current_bg: {fileID: 908305087}
 --- !u!1 &699667563
 GameObject:
   m_ObjectHideFlags: 0
@@ -51425,7 +51424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &908305088
 Transform:
   m_ObjectHideFlags: 0
@@ -57888,7 +57887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1087058700
 Transform:
   m_ObjectHideFlags: 0
@@ -57898,7 +57897,7 @@ Transform:
   m_GameObject: {fileID: 1087058699}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.28552, y: 0, z: 0}
+  m_LocalPosition: {x: 35.3, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95483,7 +95482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1195044376
 Transform:
   m_ObjectHideFlags: 0
@@ -96562,7 +96561,7 @@ GameObject:
   - component: {fileID: 1298175760}
   - component: {fileID: 1298175759}
   m_Layer: 0
-  m_Name: L3
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96580,8 +96579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e6917212b354ed7b541bfebeb7fdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deactivated_bg: {fileID: 908305087}
-  deactivated_bg1: {fileID: 1195044375}
+  current_bg: {fileID: 1087058699}
 --- !u!61 &1298175760
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -96616,7 +96614,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -72.86886, y: 8.113652}
+  m_Offset: {x: -72.55791, y: 8.113652}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -96626,7 +96624,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 106.46472, y: 26.154165}
+  m_Size: {x: 107.0866, y: 26.154165}
   m_EdgeRadius: 0
 --- !u!4 &1298175761
 Transform:
@@ -101480,7 +101478,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 66.1082, y: 19.715645}
+  m_Offset: {x: 65.60858, y: 19.715645}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -101490,7 +101488,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 168.30356, y: 73.44745}
+  m_Size: {x: 169.3028, y: 73.44745}
   m_EdgeRadius: 0
 --- !u!114 &1724847172
 MonoBehaviour:
@@ -101504,8 +101502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e6917212b354ed7b541bfebeb7fdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deactivated_bg: {fileID: 1087058699}
-  deactivated_bg1: {fileID: 908305087}
+  current_bg: {fileID: 1195044375}
 --- !u!1 &1725941163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4815632640072128546, guid: 5986998860a9f445a943e7249dde030e, type: 3}
@@ -106540,8 +106537,9 @@ SceneRoots:
   - {fileID: 151979685}
   - {fileID: 1345361494}
   - {fileID: 417500206}
-  - {fileID: 694956895}
   - {fileID: 1724847170}
+  - {fileID: 694956895}
+  - {fileID: 1298175761}
   - {fileID: 1806794300}
   - {fileID: 193817859}
   - {fileID: 1385654020}
@@ -106550,5 +106548,4 @@ SceneRoots:
   - {fileID: 2115994769}
   - {fileID: 1927533622}
   - {fileID: 1554443283}
-  - {fileID: 1298175761}
   - {fileID: 636426533}

@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    private bool playerInside = false;
-    public GameObject deactivated_bg;
-    public GameObject deactivated_bg1;
+    public GameObject current_bg;
 
     private void Start()
     {
@@ -15,10 +13,8 @@ public class LevelManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerInside = true;
             SetChildrenActive(true);
-            if (deactivated_bg != null) deactivated_bg.SetActive(false);
-            if (deactivated_bg1 != null) deactivated_bg1.SetActive(false);
+            if (current_bg != null) current_bg.SetActive(true);
         }
     }
 
@@ -26,10 +22,8 @@ public class LevelManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerInside = false;
             SetChildrenActive(false);
-            if (deactivated_bg != null) deactivated_bg.SetActive(true);
-            if (deactivated_bg1 != null) deactivated_bg1.SetActive(true);
+            if (current_bg != null) current_bg.SetActive(false);
         }
     }
 
