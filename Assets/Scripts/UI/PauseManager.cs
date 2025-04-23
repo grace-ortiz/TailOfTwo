@@ -54,7 +54,6 @@ public class PauseManager : MonoBehaviour
     public void ExitToMenu()
     {
         SceneManager.LoadScene(0); // StartScene
-        Cursor.visible = true;
     }
 
     // public void SetMusicVolume() { AudioManager.instance.ChangeMusicVolume(SliderMusic.value); }
