@@ -28,10 +28,11 @@ public class Pool : Interactable {
 
             if (!isInteracted) {
                 player.SetMaxCharges(player.maxCharges + 1);
-                player.RecallAllCharges();
                 isInteracted = true;
             }
 
+            player.RecallAllCharges();
+            
             if (mainRespawnPoint != null)
             {
                 player.transform.position = mainRespawnPoint.position;
