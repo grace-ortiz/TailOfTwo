@@ -15,7 +15,6 @@ public class Pool : Interactable {
     }
     public void Interact()
     {
-        if (isInteracted) return;
 
         if (player != null)
         {
@@ -27,9 +26,11 @@ public class Pool : Interactable {
                 Debug.Log("No FMOD event path!");
             }
 
-            player.SetMaxCharges(player.maxCharges + 1);
-            player.RecallAllCharges();
-            isInteracted = true;
+            if (!isInteracted) {
+                player.SetMaxCharges(player.maxCharges + 1);
+                player.RecallAllCharges();
+                isInteracted = true;
+            }
 
             if (mainRespawnPoint != null)
             {

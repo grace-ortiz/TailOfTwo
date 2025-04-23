@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene(1); // GameScene
+        Cursor.visible = false;
     }
 
     public void ShowCredits()

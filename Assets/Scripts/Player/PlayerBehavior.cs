@@ -22,6 +22,8 @@ public class PlayerBehavior : MonoBehaviour {
 
 
     void Update() {
+        if (!playerMovement.canControl) return;
+
         if (Input.GetKeyDown(KeyCode.O)) { // grow
 
             if (currentInteractable is Growable growable && activeCharges.Count < maxCharges) {

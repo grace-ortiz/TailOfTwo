@@ -18,6 +18,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         isVisible = false;
         PauseMenuUI.SetActive(false);
+        Cursor.visible = false;
     }
 
     void Update()
@@ -35,6 +36,7 @@ public class PauseManager : MonoBehaviour
         if(!isVisible) // if not visible, pause game
         {
             PauseMenuUI.SetActive(true);
+            Cursor.visible = true;
             isVisible = true;
             Time.timeScale = 0f;
             AudioManager.instance.PlayOneShot(FMODEvents.instance.pauseSound, this.transform.position);
@@ -42,6 +44,7 @@ public class PauseManager : MonoBehaviour
         else // if visible, resume game
         {
             PauseMenuUI.SetActive(false);
+            Cursor.visible = false;
             isVisible = false;
             Time.timeScale = 1f;
             
@@ -51,6 +54,7 @@ public class PauseManager : MonoBehaviour
     public void ExitToMenu()
     {
         SceneManager.LoadScene(0); // StartScene
+        Cursor.visible = true;
     }
 
     // public void SetMusicVolume() { AudioManager.instance.ChangeMusicVolume(SliderMusic.value); }
