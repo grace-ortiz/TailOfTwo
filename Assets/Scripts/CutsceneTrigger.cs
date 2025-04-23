@@ -16,6 +16,7 @@ public class CutsceneTrigger : MonoBehaviour
     private bool triggered = false;
     private bool waitingForInput = false;
     private Image cutsceneImage;
+    public bool goToCredits;
 
     void Start()
     {
@@ -29,7 +30,12 @@ public class CutsceneTrigger : MonoBehaviour
         if (waitingForInput && Input.anyKeyDown)
         {
             waitingForInput = false;
-            StartCoroutine(FadeOutAndLoadScene("CreditsScene"));
+            if (goToCredits) {
+                StartCoroutine(FadeOutAndLoadScene("CreditsScene"));
+            }
+            else {
+                StartCoroutine(FadeOutAndLoadScene());
+            }
         }
     }
 
@@ -111,7 +117,7 @@ public class CutsceneTrigger : MonoBehaviour
     }
 
 
-    IEnumerator FadeOutAndLoadScene(string sceneName)
+    IEnumerator FadeOutAndLoadScene(string sceneName = "")
     {
         float t = 0f;
 
@@ -124,6 +130,13 @@ public class CutsceneTrigger : MonoBehaviour
         }
 
         cutsceneImage.color = Color.black;
-        SceneManager.LoadScene(sceneName);
+        if (!string.IsNullOrEmpty(sceneName))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            cutscene.SetActive(false);
+        }
     }
 }
