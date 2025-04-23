@@ -6,13 +6,22 @@ public class AmbienceChangeTrigger : MonoBehaviour
 {
     [Header("Parameter Change")]
     [SerializeField] private string parameterName;
-    [SerializeField] private float parameterValue;
+    [SerializeField] private float enterValue = 0.2f;
+    [SerializeField] private float exitValue = 0f;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag.Equals("Player"))
+        if (collider.CompareTag("Player"))
         {
-            AudioManager.instance.SetAmbienceParameter(parameterName,parameterValue);
+            AudioManager.instance.SetAmbienceParameter(parameterName, enterValue);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            AudioManager.instance.SetAmbienceParameter(parameterName, exitValue);
         }
     }
 }

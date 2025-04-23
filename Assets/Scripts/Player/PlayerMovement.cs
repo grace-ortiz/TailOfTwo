@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour {
             StartCoroutine(DisableControlForSeconds(0.8f, true, true));
             yield return new WaitForSeconds(0.2f);
 
-            CamZoom(40);
+            CamZoom(25);
             PlayerSR.enabled = false;
             yield return new WaitForSeconds(0.2f);
             transform.position = RespawnPoint.transform.position;
